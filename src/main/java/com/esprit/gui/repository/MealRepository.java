@@ -10,7 +10,7 @@ import java.util.List;
 
 public class MealRepository implements IMeal {
 
-    Connection connection;
+    private Connection connection;
 
     public MealRepository() {
         connection = DatabaseConnection.getConnection();
@@ -18,6 +18,7 @@ public class MealRepository implements IMeal {
 
     @Override
     public List<Meal> findAll() {
+        Connection connection = DatabaseConnection.getConnection();
         List<Meal> lst = new ArrayList<>();
         try {
             PreparedStatement ps = connection.prepareStatement("select * from meal");
@@ -51,7 +52,7 @@ public class MealRepository implements IMeal {
             ps.setInt(5, meal.getFat());
             ps.setInt(6, meal.getSugar());
             ps.setInt(7, meal.getUserId());
-            ps.setDate(8, meal.getDate());
+            ps.setDate(8, (Date) meal.getDate());
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -70,7 +71,7 @@ public class MealRepository implements IMeal {
             ps.setInt(5, meal.getFat());
             ps.setInt(6, meal.getSugar());
             ps.setInt(7, meal.getUserId());
-            ps.setDate(8, meal.getDate());
+            ps.setDate(8, (Date) meal.getDate());
             ps.setInt(9, meal.getId());
             ps.executeUpdate();
         } catch (SQLException e) {

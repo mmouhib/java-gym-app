@@ -1,12 +1,14 @@
 package com.esprit.gui;
 
-import com.esprit.gui.models.Meal;
+import com.esprit.gui.repository.MealRepository;
+import com.esprit.gui.utils.DatabaseConnection;
 
-public class Dummy
-{
+import java.sql.Connection;
+
+public class Dummy {
     public static void main(String[] args) {
-
-        Meal meal = new Meal();
-        System.out.println(meal.createTableQuery());
+        Connection conn = DatabaseConnection.getConnection();
+        MealRepository mealRepository = new MealRepository();
+        System.out.println(mealRepository.findAll());
     }
 }
