@@ -11,17 +11,17 @@ public class User {
     private int id;
     private String name;
     private int age;
-    private int weight;
-    private int height;
-    private int calories;
-    private int protein;
-    private int carbs;
-    private int fat;
-    private int sugar;
-    private int targetWeight;
+    private float weight;
+    private float height;
+    private float calories;
+    private float protein;
+    private float carbs;
+    private float fat;
+    private float sugar;
+    private float targetWeight;
 
 
-    public User(int id, String name, int age, int weight, int height, int calories, int protein, int carbs, int fat, int sugar, int targetWeight) {
+    public User(int id, String name, int age, float weight, float height, float calories, float protein, float carbs, float fat, float sugar, float targetWeight) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -35,7 +35,7 @@ public class User {
         this.targetWeight = targetWeight;
     }
 
-    public User(String name, int age, int weight, int height, int calories, int protein, int carbs, int fat, int sugar, int targetWeight) {
+    public User(String name, int age, float weight, float height, float calories, float protein, float carbs, float fat, float sugar, float targetWeight) {
         this.name = name;
         this.age = age;
         this.weight = weight;
