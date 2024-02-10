@@ -1,11 +1,11 @@
 DROP TABLE IF EXISTS user;
 
 CREATE TABLE user (
-   id INT PRIMARY KEY,
-   first_name VARCHAR(255),
-   last_name VARCHAR(255),
-   phone VARCHAR(20),
-   email VARCHAR(255),
+   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+   first_name  VARCHAR(255) NOT NULL,
+   last_name VARCHAR(255) NOT NULL,
+   phone VARCHAR(20) NOT NULL,
+   email VARCHAR(255) NOT NULL,
    age INT,
    gender VARCHAR(10),
    weight FLOAT,
