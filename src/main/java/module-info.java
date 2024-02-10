@@ -7,6 +7,7 @@ module com.esprit.gui {
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
     requires lombok;
+    requires mysql.connector.j;
 
     opens com.esprit.gui to javafx.fxml;
     exports com.esprit.gui;
