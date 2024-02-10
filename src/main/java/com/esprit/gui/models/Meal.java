@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.sql.Date;
+
 @Getter
 @Setter
 @ToString
@@ -17,9 +19,12 @@ public class Meal {
     private int fat;
     private int sugar;
     private int userId;
-    private int date;
+    private Date date;
 
-    public Meal(int id, String name, int calories, int protein, int carbs, int fat, int sugar, int userId , int date) {
+    public Meal() {
+    }
+
+    public Meal(int id, String name, int calories, int protein, int carbs, int fat, int sugar, int userId, Date date) {
         this.id = id;
         this.name = name;
         this.calories = calories;
@@ -31,7 +36,7 @@ public class Meal {
         this.date = date;
     }
 
-    public Meal(String name, int calories, int protein, int carbs, int fat, int sugar, int userId , int date) {
+    public Meal(String name, int calories, int protein, int carbs, int fat, int sugar, int userId, int date) {
         this.name = name;
         this.calories = calories;
         this.protein = protein;
@@ -40,6 +45,5 @@ public class Meal {
         this.sugar = sugar;
         this.userId = userId;
     }
-
 
 }
