@@ -8,6 +8,12 @@ import static org.junit.Assert.*;
 
 public class MealRepositoryTest {
 
+    private final MealRepository mealRepository;
+
+    public MealRepositoryTest() {
+        this.mealRepository = new MealRepository();
+    }
+
 
     public Meal generateMeal() {
         Meal meal = new Meal();
@@ -23,26 +29,6 @@ public class MealRepositoryTest {
         return meal;
     }
 
-    @Test
-    public void ADD_MEAL_RETURNS_THE_GIVEN_MEAL() {
-        MealRepository mealRepository = new MealRepository();
-        Meal meal = generateMeal();
-        Meal returnedMeal = mealRepository.save(meal);
-        System.out.println(returnedMeal);
-        assertNotNull(returnedMeal);
-    }
-
-    @Test
-    public void DELETE_MEAL_RETURNS_NULL() {
-        MealRepository mealRepository = new MealRepository();
-        Meal meal = generateMeal();
-        mealRepository.save(meal);
-        meal = mealRepository.getLastAddedMeal();
-        mealRepository.delete(meal.getId());
-        Meal returnedMeal = mealRepository.findById(meal.getId());
-        assertEquals(returnedMeal.getId(), 0);
-
-    }
 
     private String generateRandomString(int length) {
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -54,8 +40,27 @@ public class MealRepositoryTest {
     }
 
     @Test
+    public void ADD_MEAL_RETURNS_THE_GIVEN_MEAL() {
+        Meal meal = generateMeal();
+        Meal returnedMeal = mealRepository.save(meal);
+        System.out.println(returnedMeal);
+        assertNotNull(returnedMeal);
+    }
+
+    @Test
+    public void DELETE_MEAL_RETURNS_NULL() {
+        Meal meal = generateMeal();
+        mealRepository.save(meal);
+        meal = mealRepository.getLastAddedMeal();
+        mealRepository.delete(meal.getId());
+        Meal returnedMeal = mealRepository.findById(meal.getId());
+        assertEquals(returnedMeal.getId(), 0);
+
+    }
+
+
+    @Test
     public void UPDATE_MEAL_RETURNS_THE_GIVEN_MEAL() {
-        MealRepository mealRepository = new MealRepository();
         Meal meal = generateMeal();
         meal.setCalories(77);
         mealRepository.save(meal);
