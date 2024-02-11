@@ -1,15 +1,16 @@
 package com.esprit.gui.interfaces;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import com.esprit.gui.models.Meal;
 import com.esprit.gui.models.User;
 
 public interface IUser {
-    List<User> findAll();
-    User findById(int id);
-    void save(User user);
-    void update(User user);
-    void delete(int id);
-    List<Meal> getUserMeals(int id);
+    List<User> findAll() throws SQLException;
+    User findById(int id) throws SQLException;
+    void save(User user) throws SQLException;
+    void update(User user) throws SQLException;;
+    void delete(int id) throws SQLException;
+    List<Meal> getUserMeals(int id) throws SQLException;
 }
