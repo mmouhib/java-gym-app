@@ -17,8 +17,7 @@ public class MealRepository implements IMeal {
     }
 
     @Override
-    public List<Meal> findAll() {
-        Connection connection = DatabaseConnection.getConnection();
+    public List<Meal> list() {
         List<Meal> lst = new ArrayList<>();
         try {
             PreparedStatement ps = connection.prepareStatement("select * from meal");
@@ -62,14 +61,13 @@ public class MealRepository implements IMeal {
                 meal.setDate(rs.getDate(9));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         return meal;
     }
 
     @Override
     public Meal save(Meal meal) {
-        // save meal to database
         try {
             PreparedStatement ps = connection.prepareStatement("INSERT INTO meal(name, calories, protein, carbs, fat, sugar, userId, date) VALUES(?, ?, ?, ?, ?,?, ?, ?)");
             ps.setString(1, meal.getName());
@@ -84,12 +82,11 @@ public class MealRepository implements IMeal {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-
-        return lastAddedMeal();
+        return getLastAddedMeal();
     }
 
 
-    private Meal lastAddedMeal() {
+    public Meal getLastAddedMeal() {
         // get last added meal from database
         Meal meal = new Meal();
         try {
@@ -114,7 +111,6 @@ public class MealRepository implements IMeal {
 
     @Override
     public void update(Meal meal) {
-        // update meal in database
         try {
             PreparedStatement ps = connection.prepareStatement("UPDATE meal SET name=?, calories=?, protein=?, carbs=?, fat=?, sugar=?, userId=?, date=? WHERE id=?");
             ps.setString(1, meal.getName());

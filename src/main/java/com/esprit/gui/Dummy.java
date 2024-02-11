@@ -9,6 +9,6 @@ public class Dummy {
     public static void main(String[] args) {
         Connection conn = DatabaseConnection.getConnection();
         MealRepository mealRepository = new MealRepository();
-        System.out.println(mealRepository.findAll());
+        System.out.println(mealRepository.list());
     }
 }
