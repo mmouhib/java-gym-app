@@ -69,7 +69,7 @@ public class CourseRepository implements ICourse {
     public Course save(Course course) {
         // save course to database
         try {
-            PreparedStatement ps = connection.prepareStatement("INSERT INTO course(name, calories, protein, carbs, fat, sugar, userId, date) VALUES(?, ?, ?, ?, ?,?, ?, ?)");
+            PreparedStatement ps = connection.prepareStatement("INSERT INTO course(name, type, coach, userId, numplaces, startDate, enddate) VALUES(?, ?, ?, ?, ?,?, ?, ?)");
             ps.setString(1, course.getName());
             ps.setString(2,course.getType());
             ps.setString(3,course.getCoach());
@@ -112,7 +112,7 @@ public class CourseRepository implements ICourse {
     public void update(Course course) {
         // update course in database
         try {
-            PreparedStatement ps = connection.prepareStatement("UPDATE course SET name=?, calories=?, protein=?, carbs=?, fat=?, sugar=?, userId=?, date=? WHERE id=?");
+            PreparedStatement ps = connection.prepareStatement("UPDATE course SET name=?, type=?, coach=?, userId=?, numPlaces=?, startDate=?, endDate=? WHERE id=?");
             ps.setString(1, course.getName());
             ps.setString(2,course.getType());
             ps.setString(3,course.getCoach());
