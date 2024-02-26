@@ -2,15 +2,13 @@ package com.esprit.gui.controllers;
 
 import com.esprit.gui.models.Plate;
 import com.esprit.gui.repository.PlatesRepository;
-import javafx.event.ActionEvent;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+
+import java.util.List;
 
 public class PlatesController {
-
     public TextField id;
     public TextField name;
     public TextField calories;
@@ -24,12 +22,30 @@ public class PlatesController {
     public Button deleteButton;
     public Button resetButton;
 
+    @FXML
     void initialize() {
         id.setDisable(true);
-        System.out.println("init");
+
+        List<Plate> plates = new PlatesRepository().list();
+        System.out.println(plates);
+
+        //platesTableView.getItems().addAll(plates);
+        //platesTableView.setEditable(true);
+        platesTableView.setId("id");
+
+        TableColumn<Plate, String> idColumn = new TableColumn<>("id");
+        TableColumn<Plate, String> nameColumn = new TableColumn<>("name");
+        TableColumn<Plate, String> caloriesColumn = new TableColumn<>("Calories");
+        TableColumn<Plate, String> proteinColumn = new TableColumn<>("protein");
+        TableColumn<Plate, String> carbsColumn = new TableColumn<>("Carbs");
+        TableColumn<Plate, String> fatColumn = new TableColumn<>("Fat");
+        TableColumn<Plate, String> sugarColumn = new TableColumn<>("Sugar");
+
+
+
     }
 
-     // TODO: Add the following methods:
+    // TODO: Add the following methods:
     // - savePlate
     // - editPlate
     // - deletePlate
@@ -40,9 +56,14 @@ public class PlatesController {
     // - validateForm
     // - validateDate
 
-
     @FXML
     public void onSave() {
+        if (!isFormValid()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Please check the form data. ");
+            alert.show();
+            return;
+        }
         PlatesRepository platesRepository = new PlatesRepository();
         Plate plate = new Plate(
                 name.getText(),
@@ -56,6 +77,8 @@ public class PlatesController {
         platesRepository.save(plate);
     }
 
+
+
     @FXML
     public void clearForm() {
         id.clear();
@@ -66,4 +89,14 @@ public class PlatesController {
         carbs.clear();
         sugar.clear();
     }
+
+    boolean isFormValid() {
+        return !name.getText().isEmpty() &&
+                !calories.getText().isEmpty() &&
+                !protein.getText().isEmpty() &&
+                !fat.getText().isEmpty() &&
+                !carbs.getText().isEmpty() &&
+                !sugar.getText().isEmpty();
+    }
+
 }
