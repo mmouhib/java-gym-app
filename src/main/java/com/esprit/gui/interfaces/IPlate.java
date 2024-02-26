@@ -8,7 +8,4 @@ import java.util.List;
 public interface IPlate extends ICrud<Plate> {
     List<Plate> getPlatesByUser(int id);
 
-    List<Plate> getPlatesByDate(String date);
-
-    List<Plate> getPlatesByDates(String start, String end);
 }
