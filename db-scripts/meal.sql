@@ -11,7 +11,8 @@ CREATE TABLE meal
     sugar    int(11)      NOT NULL,
     userId   int(11)      NOT NULL,
     date     date         NOT NULL,
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    FOREIGN KEY (userId) REFERENCES user (id)
 );
 
 
@@ -30,4 +31,5 @@ INSERT INTO meal (name, calories, protein, carbs, fat, sugar, userId, date)
 VALUES ('Dinner', 500, 20, 50, 25, 10, 1, '2020-01-02');
 
 
-select * from meal;
+select *
+from meal;

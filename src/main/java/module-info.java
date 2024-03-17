@@ -9,6 +9,7 @@ module com.esprit.gui {
     requires lombok;
     requires mysql.connector.j;
     requires jbcrypt;
+    requires junit;
 
     opens com.esprit.gui to javafx.fxml;
     exports com.esprit.gui;

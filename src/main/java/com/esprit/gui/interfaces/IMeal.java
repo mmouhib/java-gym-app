@@ -7,7 +7,7 @@ import java.util.List;
 public interface IMeal {
     List<Meal> findAll();
     Meal findById(int id);
-    void save(Meal meal);
+    Meal save(Meal meal);
     void update(Meal meal);
     void delete(int id);
     List<Meal> getMealsByUser(int id);
