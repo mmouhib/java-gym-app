@@ -69,6 +69,11 @@
             <version>1.18.30</version>
         </dependency>
         <dependency>
+            <groupId>org.mindrot</groupId>
+            <artifactId>jbcrypt</artifactId>
+            <version>0.4</version>
+        </dependency>
+
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.1</version>

@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS user;
 
+
 CREATE TABLE user
 (
     id           INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -21,6 +22,7 @@ CREATE TABLE user
 );
 
 -- insert data into user table
+
 
 INSERT INTO user (id, first_name, last_name, phone, email, age, gender, weight, height, calories, protein, carbs, fat,
                   sugar, targetWeight, role)
