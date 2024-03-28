@@ -20,7 +20,7 @@ public class UserRepository implements IUser {
     public UserRepository() {
         connection = DatabaseConnection.getConnection();
     }
-
+    User user = new User();
     @Override
     public List<User> findAll()  throws SQLException {
         Connection connection = DatabaseConnection.getConnection();
@@ -193,11 +193,11 @@ public class UserRepository implements IUser {
                 e.printStackTrace();
             }
 
-            return false;
         }else{
             // email not found
            return  false;
         }
+        return false;
     }
     @Override
     public List<Meal> getUserMeals(int id) throws SQLException {

@@ -12,4 +12,6 @@ module com.esprit.gui {
 
     opens com.esprit.gui to javafx.fxml;
     exports com.esprit.gui;
+    exports com.esprit.gui.controllers;
+    opens com.esprit.gui.controllers to javafx.fxml;
 }
