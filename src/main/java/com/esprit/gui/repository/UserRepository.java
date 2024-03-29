@@ -137,8 +137,8 @@ public class UserRepository implements IUser {
             statement.setFloat(13, user.getSugar());
             statement.setFloat(14, user.getTargetWeight());
             statement.setString(15, user.getRole());
-            statement.setInt(16, user.getId());
-            statement.setString(17, hashedPassword);
+            statement.setInt(17, user.getId());
+            statement.setString(16, hashedPassword);
 
 
             statement.executeUpdate();

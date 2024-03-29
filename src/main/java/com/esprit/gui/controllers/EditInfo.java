@@ -82,6 +82,7 @@ public class EditInfo {
     private Button signup;
     private String OldPassword;
     private String email;
+    private int idUser;
 
     @FXML
     void home(ActionEvent event) {
@@ -106,7 +107,7 @@ public class EditInfo {
     }
     void setFileds(int id)throws SQLException {
 
-
+        idUser = id;
         User u = new User();
         UserRepository ur = new UserRepository();
         u = ur.findById(id);
@@ -203,8 +204,9 @@ public class EditInfo {
         }else {
 
             if(validPassword) {
-                //ur.save(u);
-                System.out.println("edited!");
+                u.setId(idUser);
+                ur.update(u);
+                //System.out.println("edited!");
 
                 try {
                     Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/home.fxml"));
