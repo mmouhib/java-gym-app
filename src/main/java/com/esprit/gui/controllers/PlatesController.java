@@ -54,6 +54,8 @@ public class PlatesController {
     public TableColumn<PlatesModel, Integer> fat;
     @FXML
     public TableColumn<PlatesModel, Integer> sugar;
+    @FXML
+    public TextField search;
 
     private ObservableList<PlatesModel> platesModels = FXCollections.observableArrayList();
 
@@ -63,6 +65,10 @@ public class PlatesController {
         id_input.setDisable(true);
         platesTableView.setId("id");
         initializeTableView();
+
+        search.textProperty().addListener((observable, oldVal, newVal) -> {
+            search(newVal);
+        });
     }
 
     private void initializeTableView() {
@@ -99,6 +105,8 @@ public class PlatesController {
     }
 
     private void addToTableView() {
+        search.setText("");
+
         platesModels.clear();
         List<Plate> plates = new PlatesRepository().list();
 
@@ -128,6 +136,7 @@ public class PlatesController {
             }
             PlatesRepository platesRepository = new PlatesRepository();
             Plate plate = new Plate(
+                    Integer.parseInt(id_input.getText()),
                     name_input.getText(),
                     Integer.parseInt(calories_input.getText()),
                     Integer.parseInt(protein_input.getText()),
@@ -136,7 +145,12 @@ public class PlatesController {
                     Integer.parseInt(sugar_input.getText()),
                     1
             );
-            platesRepository.save(plate);
+
+            if (platesRepository.plateExists(plate.getId())) {
+                platesRepository.update(plate);
+            } else {
+                platesRepository.save(plate);
+            }
             addToTableView();
         } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -156,6 +170,44 @@ public class PlatesController {
     }
 
     public void editPlate(ActionEvent actionEvent) {
+        PlatesRepository platesRepository = new PlatesRepository();
+        PlatesModel selectedItem = platesTableView.getSelectionModel().getSelectedItem();
+        Plate plate = platesRepository.findById(selectedItem.getId());
 
+        id_input.setText(String.valueOf(plate.getId()));
+        name_input.setText(plate.getName());
+        calories_input.setText(String.valueOf(plate.getCalories()));
+        protein_input.setText(String.valueOf(plate.getProtein()));
+        carbs_input.setText(String.valueOf(plate.getCarbs()));
+        fat_input.setText(String.valueOf(plate.getFat()));
+        sugar_input.setText(String.valueOf(plate.getSugar()));
+
+    }
+
+    public void search(String searchTerm) {
+        platesModels.clear();
+        List<Plate> plates = new PlatesRepository().list();
+
+        for (Plate plate : plates) {
+            if (String.valueOf(plate.getId()).contains(searchTerm) ||
+                    plate.getName().contains(searchTerm) ||
+                    String.valueOf(plate.getCalories()).contains(searchTerm) ||
+                    String.valueOf(plate.getProtein()).contains(searchTerm) ||
+                    String.valueOf(plate.getCarbs()).contains(searchTerm) ||
+                    String.valueOf(plate.getFat()).contains(searchTerm) ||
+                    String.valueOf(plate.getSugar()).contains(searchTerm)) {
+                platesModels.add(new PlatesModel(
+                        plate.getId(),
+                        plate.getName(),
+                        plate.getCalories(),
+                        plate.getProtein(),
+                        plate.getCarbs(),
+                        plate.getFat(),
+                        plate.getSugar()
+                ));
+            }
+        }
+
+        platesTableView.setItems(platesModels);
     }
 }

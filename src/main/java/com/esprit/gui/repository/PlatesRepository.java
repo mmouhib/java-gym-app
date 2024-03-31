@@ -142,4 +142,16 @@ public class PlatesRepository implements IPlate {
         return plates;
     }
 
+    public boolean plateExists(int id) {
+        try {
+            PreparedStatement ps = connection.prepareStatement("select * from plate where id=?");
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            return rs.next();
+        } catch (SQLException e) {
+            System.out.println("problem in checking if plate exists");
+        }
+        return false;
+    }
+
 }

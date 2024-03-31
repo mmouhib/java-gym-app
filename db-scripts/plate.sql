@@ -10,3 +10,10 @@ CREATE TABLE plate
     user_id   int(11) NOT NULL,
     FOREIGN KEY (user_id) REFERENCES user (id)
 )
+
+-- insert some data
+INSERT INTO plate (name, calories, protein, carbs, fat, sugar, user_id) VALUES ('Chicken', 100, 20, 0, 5, 0, 1);
+INSERT INTO plate (name, calories, protein, carbs, fat, sugar, user_id) VALUES ('Rice', 200, 0, 40, 0, 0, 1);
+INSERT INTO plate (name, calories, protein, carbs, fat, sugar, user_id) VALUES ('Apple', 50, 0, 10, 0, 10, 1);
+INSERT INTO plate (name, calories, protein, carbs, fat, sugar, user_id) VALUES ('Pasta', 300, 10, 50, 5, 0, 1);
+
