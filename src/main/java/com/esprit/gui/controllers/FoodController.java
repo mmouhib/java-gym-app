@@ -6,9 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -78,5 +75,19 @@ public class FoodController {
             throw new RuntimeException(e);
         }
 
+    }
+
+    public void goToHome(ActionEvent event) {
+        try {
+            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/home.fxml"));
+            Scene scene = new Scene(p, 1100, 650);
+            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            appStage.setScene(scene);
+            //appStage.setUserData(3);
+            appStage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
