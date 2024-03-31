@@ -9,7 +9,7 @@ CREATE TABLE plate
     sugar    int(11) NOT NULL,
     user_id   int(11) NOT NULL,
     FOREIGN KEY (user_id) REFERENCES user (id)
-)
+);
 
 -- insert some data
 INSERT INTO plate (name, calories, protein, carbs, fat, sugar, user_id) VALUES ('Chicken', 100, 20, 0, 5, 0, 1);

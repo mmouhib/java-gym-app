@@ -41,10 +41,22 @@ public class HomeController {
             Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             appStage.setScene(scene);
             appStage.show();
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
+    public void goToFood(ActionEvent event) {
+        try {
+            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/food.fxml"));
+            Scene scene = new Scene(p,1100, 650);
+            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            appStage.setScene(scene);
+            //appStage.setUserData(3);
+            appStage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

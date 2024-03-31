@@ -11,7 +11,7 @@ import java.io.IOException;
 public class MainFX extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-       FXMLLoader fxmlLoader = new FXMLLoader(MainFX.class.getResource("/com/esprit/gui/sign-in.fxml"));
+       FXMLLoader fxmlLoader = new FXMLLoader(MainFX.class.getResource("/com/esprit/gui/food.fxml"));
 
         //FXMLLoader fxmlLoader = new FXMLLoader(MainFX.class.getResource("/com/esprit/gui/home2.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),1100, 650);
