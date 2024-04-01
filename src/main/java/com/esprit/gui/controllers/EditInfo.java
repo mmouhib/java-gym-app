@@ -16,6 +16,9 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import org.mindrot.jbcrypt.BCrypt;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -98,12 +101,24 @@ public class EditInfo {
         }
     }
     private TextField nameField;
+
+    String readData(String path) throws IOException {
+        String line = null;
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+            while ((line = br.readLine()) != null) {
+                return line;
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return line;
+    }
     @FXML
-    private void initialize() throws SQLException {
+    private void initialize() throws SQLException, IOException {
 
-
-
-        setFileds(5); // Call the method to set fields by default
+        String idCurrentUser = readData("set-id.txt");
+        setFileds(Integer.parseInt(idCurrentUser)); // Call the method to set fields by default
     }
     void setFileds(int id)throws SQLException {
 

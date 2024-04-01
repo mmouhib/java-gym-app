@@ -203,4 +203,23 @@ public class UserRepository implements IUser {
     public List<Meal> getUserMeals(int id) throws SQLException {
         return null;
     }
+
+    public User findByEmail(String email) throws SQLException {
+        String query = "SELECT id FROM user WHERE email = ?";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, email);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    User user = new User();
+                    user.setId(resultSet.getInt("id"));
+                    return user;
+                }
+            }
+        }
+
+        return null; // User not found
+    }
+
 }
