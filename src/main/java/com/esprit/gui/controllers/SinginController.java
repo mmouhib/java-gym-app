@@ -14,7 +14,10 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.sql.SQLException;
 
 import static java.lang.System.exit;
@@ -58,7 +61,7 @@ public class SinginController {
     }
 
     @FXML
-    void sigin(ActionEvent event) throws SQLException {
+    void sigin(ActionEvent event) throws SQLException, IOException {
         User u = new User();
         boolean success;
         u.setEmail(mail.getText());
@@ -66,7 +69,10 @@ public class SinginController {
         success= ps.signIn(u);
         if(success){
             // interface home
-            System.out.println("ture");
+            //System.out.println("ture");
+            String email = u.getEmail();
+            u = ps.findByEmail(email);
+            saveData( String.valueOf(u.getId()),"set-id.txt");
             try {
                 Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/home.fxml"));
                 Scene scene = new Scene(p,1100, 650);
@@ -114,6 +120,13 @@ public class SinginController {
             errorStage.setX((primScreenBounds.getWidth() - errorStage.getWidth()) / 2);
             errorStage.setY((primScreenBounds.getHeight() - errorStage.getHeight()) / 2);
         }
+    }
+
+    void saveData(String data, String path) throws IOException{
+        //Files.writeString(fileName, data);
+        FileWriter writer = new FileWriter(path);
+        writer.write(data);
+        writer.close();
     }
     @FXML
     void signup(ActionEvent event) {
