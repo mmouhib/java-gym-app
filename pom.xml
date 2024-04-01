@@ -78,6 +78,17 @@
             <artifactId>fontawesomefx</artifactId>
             <version>8.2</version>
         </dependency>
+
+        <!--        add gluonhq.charm.glisten depeldency-->
+
+
+        <dependency>
+            <groupId>com.gluonhq</groupId>
+            <artifactId>gluonfx-maven-plugin</artifactId>
+            <version>1.0.15</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

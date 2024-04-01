@@ -7,9 +7,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.List;
 
 public class PlatesController {
@@ -181,7 +187,6 @@ public class PlatesController {
         carbs_input.setText(String.valueOf(plate.getCarbs()));
         fat_input.setText(String.valueOf(plate.getFat()));
         sugar_input.setText(String.valueOf(plate.getSugar()));
-
     }
 
     public void search(String searchTerm) {
@@ -209,5 +214,89 @@ public class PlatesController {
         }
 
         platesTableView.setItems(platesModels);
+    }
+
+    public void goToHome(ActionEvent event) {
+        try {
+            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/home.fxml"));
+            Scene scene = new Scene(p, 1100, 650);
+            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            appStage.setScene(scene);
+            //appStage.setUserData(3);
+            appStage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void goToNutrition(ActionEvent event) {
+        try {
+            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/food.fxml"));
+            Scene scene = new Scene(p, 1100, 650);
+            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            appStage.setScene(scene);
+            //appStage.setUserData(3);
+            appStage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void goToTracking(ActionEvent event) {
+        try {
+            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/nutrition.fxml"));
+            Scene scene = new Scene(p, 1100, 650);
+            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            appStage.setScene(scene);
+            //appStage.setUserData(3);
+            appStage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void goToMeals(ActionEvent event) {
+        try {
+            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/meals.fxml"));
+            Scene scene = new Scene(p, 1100, 650);
+            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            appStage.setScene(scene);
+            //appStage.setUserData(3);
+            appStage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void goToProfile(ActionEvent event) {
+        try {
+            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/edit-info.fxml"));
+            Scene scene = new Scene(p, 1100, 650);
+            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            appStage.setScene(scene);
+            //appStage.setUserData(3);
+            appStage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void logOut(ActionEvent event) {
+        try {
+            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/sign-in.fxml"));
+            Scene scene = new Scene(p, 1100, 650);
+            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            appStage.setScene(scene);
+            //appStage.setUserData(3);
+            appStage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
