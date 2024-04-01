@@ -115,7 +115,7 @@ public class PlatesController {
         search.setText("");
 
         platesModels.clear();
-        List<Plate> plates = new PlatesRepository().list();
+        List<Plate> plates = new PlatesRepository().getPlatesByUser(Integer.parseInt(AuthSessionUtils.getCurrentUser()));
 
         for (Plate plate : plates) {
             platesModels.add(new PlatesModel(
@@ -194,7 +194,7 @@ public class PlatesController {
 
     public void search(String searchTerm) {
         platesModels.clear();
-        List<Plate> plates = new PlatesRepository().list();
+        List<Plate> plates = new PlatesRepository().getPlatesByUser(Integer.parseInt(AuthSessionUtils.getCurrentUser()));
 
         for (Plate plate : plates) {
             if (String.valueOf(plate.getId()).contains(searchTerm) ||
