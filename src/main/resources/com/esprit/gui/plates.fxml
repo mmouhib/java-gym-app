@@ -29,13 +29,13 @@
     <Button fx:id="saveButton" layoutX="180.0" layoutY="503.0" mnemonicParsing="false" onAction="#onSave" text="Save" />
     <Button fx:id="editButton" layoutX="601.0" layoutY="516.0" mnemonicParsing="false" onAction="#editPlate" text="Edit" />
     <Button fx:id="deleteButton" layoutX="661.0" layoutY="516.0" mnemonicParsing="false" onAction="#deletePlate" text="Delete" />
-    <Button fx:id="resetButton" layoutX="231.0" layoutY="503.0" mnemonicParsing="false" onAction="#clearForm" text="Reset" />
+    <Button fx:id="resetButton" layoutX="295.0" layoutY="503.0" mnemonicParsing="false" onAction="#clearForm" text="Reset" />
    <TextField fx:id="search" layoutX="749.0" layoutY="153.0" promptText="search" />
-   <Button onAction="#goToHome" fx:id="home" layoutX="359.0" layoutY="8.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="85.0" text="Home" />
-   <Button onAction="#goToNutrition" fx:id="nuitrition" layoutX="444.0" layoutY="8.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="85.0" text="Nutrition" />
-   <Button onAction="#goToTracking" fx:id="tracking" layoutX="529.0" layoutY="8.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="85.0" text="Tracking" />
-   <Button onAction="#goToMeals" fx:id="meals" layoutX="614.0" layoutY="8.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="85.0" text="meals" />
-   <Button onAction="#goToProfile" fx:id="profile" layoutX="699.0" layoutY="8.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="85.0" text="My profile" />
-   <Button onAction="#logOut" fx:id="logout" layoutX="999.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="85.0" text="Log out" />
+   <Button fx:id="home" layoutX="359.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="32.0" prefWidth="85.0" text="Home" />
+   <Button fx:id="nuitrition" layoutX="444.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToNutrition" prefHeight="32.0" prefWidth="85.0" text="Nutrition" />
+   <Button fx:id="tracking" layoutX="529.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToTracking" prefHeight="32.0" prefWidth="85.0" text="Tracking" />
+   <Button fx:id="plates" layoutX="614.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToMeals" prefHeight="32.0" prefWidth="85.0" text="Plates" />
+   <Button fx:id="profile" layoutX="699.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToProfile" prefHeight="32.0" prefWidth="85.0" text="My profile" />
+   <Button fx:id="logout" layoutX="999.0" layoutY="14.0" mnemonicParsing="false" onAction="#logOut" prefHeight="32.0" prefWidth="85.0" text="Log out" />
 
 </AnchorPane>

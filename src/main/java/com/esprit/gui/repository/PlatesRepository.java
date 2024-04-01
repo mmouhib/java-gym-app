@@ -23,7 +23,6 @@ public class PlatesRepository implements IPlate {
     @Override
     public Plate save(Plate plate) {
         try {
-
             PreparedStatement preparedStatement = connection.prepareStatement("insert into plate (name, calories, protein, carbs, fat, sugar, user_id) values (?, ?, ?, ?, ?, ?, ?)");
             preparedStatement.setString(1, plate.getName());
             preparedStatement.setInt(2, plate.getCalories());

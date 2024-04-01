@@ -3,6 +3,7 @@ package com.esprit.gui.controllers;
 import com.esprit.gui.models.Plate;
 import com.esprit.gui.models.PlatesModel;
 import com.esprit.gui.repository.PlatesRepository;
+import com.esprit.gui.utils.AuthSessionUtils;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -141,22 +142,24 @@ public class PlatesController {
                 return;
             }
             PlatesRepository platesRepository = new PlatesRepository();
+
             Plate plate = new Plate(
-                    Integer.parseInt(id_input.getText()),
                     name_input.getText(),
                     Integer.parseInt(calories_input.getText()),
                     Integer.parseInt(protein_input.getText()),
                     Integer.parseInt(carbs_input.getText()),
                     Integer.parseInt(fat_input.getText()),
                     Integer.parseInt(sugar_input.getText()),
-                    1
+                    Integer.parseInt(AuthSessionUtils.getCurrentUser())
             );
 
-            if (platesRepository.plateExists(plate.getId())) {
-                platesRepository.update(plate);
-            } else {
+            if (id_input.getText().isEmpty()) {
                 platesRepository.save(plate);
+            } else {
+                plate.setId(Integer.parseInt(id_input.getText()));
+                platesRepository.update(plate);
             }
+
             addToTableView();
         } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
