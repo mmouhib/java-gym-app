@@ -33,7 +33,7 @@ public class FoodController {
     @FXML
     public void goToPlates(ActionEvent event) {
         try {
-            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/plates.fxml"));
+            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/nutrition/plates.fxml"));
             Scene scene = new Scene(p, 1100, 650);
             Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             appStage.setScene(scene);
@@ -49,7 +49,7 @@ public class FoodController {
     @FXML
     public void goToMeals(ActionEvent event) {
         try {
-            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/meal.fxml"));
+            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/nutrition/meal.fxml"));
             Scene scene = new Scene(p, 1100, 650);
             Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             appStage.setScene(scene);
@@ -64,7 +64,7 @@ public class FoodController {
     @FXML
     public void goToTracking(ActionEvent event) {
         try {
-            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/food-tracking.fxml"));
+            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/nutrition/food-tracking.fxml"));
             Scene scene = new Scene(p, 1100, 650);
             Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             appStage.setScene(scene);

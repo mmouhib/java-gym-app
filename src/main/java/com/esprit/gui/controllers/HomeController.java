@@ -7,7 +7,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -48,7 +47,7 @@ public class HomeController {
 
     public void goToFood(ActionEvent event) {
         try {
-            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/food.fxml"));
+            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/nutrition/food.fxml"));
             Scene scene = new Scene(p,1100, 650);
             Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             appStage.setScene(scene);

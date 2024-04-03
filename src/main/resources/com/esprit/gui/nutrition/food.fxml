@@ -51,7 +51,7 @@
                     </stroke>
                 </Circle>
                 <Button fx:id="logout" layoutX="734.0" layoutY="33.0" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: transparent;" text="Log out" />
-                  <Button layoutX="569.0" layoutY="259.0" mnemonicParsing="false" onAction="#goToTracking" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
+                  <Button layoutX="569.0" layoutY="259.0" mnemonicParsing="false" onAction="#goToTracking" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../css/fullpackstyling.css" />
                   <Circle layoutX="653.0" layoutY="346.0" radius="50.0" strokeType="INSIDE">
                       <fill>
                           <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
@@ -65,7 +65,7 @@
                   </Circle>
                   <ImageView fitHeight="49.0" fitWidth="37.0" layoutX="635.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
                       <image>
-                          <Image url="@../../../pics/food/tracking.png" />
+                          <Image url="@../../../../pics/food/tracking.png" />
                       </image>
                   </ImageView>
                   <Label alignment="CENTER" layoutX="570.0" layoutY="405.0" prefHeight="17.0" prefWidth="168.0" text="tracking" textFill="WHITE">
@@ -73,7 +73,7 @@
                           <Font name="Arial Bold" size="13.0" />
                       </font>
             </Label>
-                  <Button layoutX="321.0" layoutY="259.0" mnemonicParsing="false" onAction="#goToMeals" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
+                  <Button layoutX="321.0" layoutY="259.0" mnemonicParsing="false" onAction="#goToMeals" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../css/fullpackstyling.css" />
                   <Circle layoutX="405.0" layoutY="346.0" radius="50.0" strokeType="INSIDE">
                       <stroke>
                           <LinearGradient endX="1.0" endY="1.0">
@@ -94,7 +94,7 @@
                   </Circle>
                   <ImageView fitHeight="49.0" fitWidth="37.0" layoutX="387.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
                       <image>
-                          <Image url="@../../../pics/food/meal.png" />
+                          <Image url="@../../../../pics/food/meal.png" />
                       </image>
                   </ImageView>
                   <Label alignment="CENTER" layoutX="322.0" layoutY="405.0" prefHeight="17.0" prefWidth="168.0" text="meals" textFill="WHITE">
@@ -102,7 +102,7 @@
                           <Font name="Arial Bold" size="13.0" />
                       </font>
             </Label>
-                  <Button fx:id="genaral" layoutX="90.0" layoutY="259.0" mnemonicParsing="false" onAction="#goToPlates" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
+                  <Button fx:id="genaral" layoutX="90.0" layoutY="259.0" mnemonicParsing="false" onAction="#goToPlates" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../css/fullpackstyling.css" />
                   <Circle layoutX="174.0" layoutY="346.0" radius="50.0" strokeType="INSIDE">
                       <stroke>
                           <LinearGradient endX="1.0" endY="1.0">
@@ -123,7 +123,7 @@
                   </Circle>
                   <ImageView fitHeight="49.0" fitWidth="37.0" layoutX="156.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
                       <image>
-                          <Image url="@../../../pics/food/plate.png" />
+                          <Image url="@../../../../pics/food/plate.png" />
                       </image>
                   </ImageView>
                   <Label alignment="CENTER" layoutX="84.0" layoutY="405.0" prefHeight="17.0" prefWidth="174.0" text="Plates" textFill="WHITE">
