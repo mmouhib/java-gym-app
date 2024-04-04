@@ -30,4 +30,13 @@ public class Plate {
         this.userId = userId;
     }
 
+    public Plate(String name, int calories, int protein, int carbs, int fat, int sugar) {
+        this.name = name;
+        this.calories = calories;
+        this.protein = protein;
+        this.carbs = carbs;
+        this.fat = fat;
+        this.sugar = sugar;
+    }
+
 }
