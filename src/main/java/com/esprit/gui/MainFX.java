@@ -21,7 +21,7 @@ public class MainFX extends Application {
         }
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(MainFX.class.getResource("/com/esprit/gui/nutrition/food.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainFX.class.getResource("/com/esprit/gui/nutrition/product.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1100, 650);
         stage.setTitle("Sign in");
         stage.setScene(scene);

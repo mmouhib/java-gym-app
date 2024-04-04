@@ -103,8 +103,12 @@ public class FoodMacros {
 
     }
 
-    public boolean requestIsValid() {
+    public boolean requestIsValid() throws Exception {
         String errorMessage = "no code or invalid code";
-        return true;
+        try {
+            return this.requestData().contains(errorMessage);
+        } catch (Exception e) {
+            throw new Exception();
+        }
     }
 }

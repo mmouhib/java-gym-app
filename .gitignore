@@ -1,3 +1,7 @@
+### CUSTOM ###
+set-id.txt
+dummy.json
+
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
@@ -21,8 +25,6 @@ target/
 .settings
 .springBeans
 .sts4-cache
-
-set-id.txt
 
 ### NetBeans ###
 /nbproject/private/
