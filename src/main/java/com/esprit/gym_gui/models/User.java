@@ -13,6 +13,7 @@ public class User {
     private String last_name;
     private String phone;
     private String email;
+    private String password;
     private int age;
     private String gender;
     private float weight;
@@ -25,12 +26,13 @@ public class User {
     private float targetWeight;
     private String role;
 
-    public User(int id, String first_name, String last_name, String phone, String email, int age, String gender, float weight, float height, float calories, float protein, float carbs, float fat, float sugar, float targetWeight, String role) {
+    public User(int id, String first_name, String last_name, String phone, String email, String pawword, int age, String gender, float weight, float height, float calories, float protein, float carbs, float fat, float sugar, float targetWeight, String role) {
         this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.phone = phone;
         this.email = email;
+        this.password = pawword ;
         this.age = age;
         this.gender = gender;
         this.weight = weight;

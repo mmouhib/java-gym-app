@@ -12,5 +12,7 @@ public interface IUser {
     void save(User user) throws SQLException;
     void update(User user) throws SQLException;;
     void delete(int id) throws SQLException;
+    boolean signIn(User user) throws SQLException;;
+
     List<Meal> getUserMeals(int id) throws SQLException;
 }
