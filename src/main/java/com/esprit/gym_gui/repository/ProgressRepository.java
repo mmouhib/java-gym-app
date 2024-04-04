@@ -1,8 +1,8 @@
-package com.esprit.gui.repository;
+package com.esprit.gym_gui.repository;
 
-import com.esprit.gui.interfaces.IProgress;
-import com.esprit.gui.models.Progress;
-import com.esprit.gui.utils.DatabaseConnection;
+import com.esprit.gym_gui.interfaces.IProgress;
+import com.esprit.gym_gui.models.Progress;
+import com.esprit.gym_gui.utils.DatabaseConnection;
 
 import java.sql.*;
 import java.time.LocalDate;

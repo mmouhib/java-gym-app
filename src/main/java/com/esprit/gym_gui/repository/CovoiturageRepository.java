@@ -1,8 +1,8 @@
-package com.esprit.gui.repository;
+package com.esprit.gym_gui.repository;
 
-import com.esprit.gui.interfaces.ICovoiturage;
-import com.esprit.gui.models.Covoiturage;
-import com.esprit.gui.utils.DatabaseConnection;
+import com.esprit.gym_gui.interfaces.ICovoiturage;
+import com.esprit.gym_gui.models.Covoiturage;
+import com.esprit.gym_gui.utils.DatabaseConnection;
 
 import java.sql.*;
 import java.util.ArrayList;

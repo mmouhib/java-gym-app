@@ -1,4 +1,4 @@
-package com.esprit.gui;
+package com.esprit.gym_gui;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

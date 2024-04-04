@@ -1,9 +1,9 @@
-package com.esprit.gui.repository;
+package com.esprit.gym_gui.repository;
 
-import com.esprit.gui.interfaces.IUser;
-import com.esprit.gui.models.Meal;
-import com.esprit.gui.models.User;
-import com.esprit.gui.utils.DatabaseConnection;
+import com.esprit.gym_gui.interfaces.IUser;
+import com.esprit.gym_gui.models.Meal;
+import com.esprit.gym_gui.models.User;
+import com.esprit.gym_gui.utils.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

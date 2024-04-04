@@ -1,4 +1,4 @@
-package com.esprit.gui.models;
+package com.esprit.gym_gui.models;
 
 
 import lombok.Getter;

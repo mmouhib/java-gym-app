@@ -1,7 +1,7 @@
-package com.esprit.gui;
+package com.esprit.gym_gui;
 
-import com.esprit.gui.repository.MealRepository;
-import com.esprit.gui.utils.DatabaseConnection;
+import com.esprit.gym_gui.repository.MealRepository;
+import com.esprit.gym_gui.utils.DatabaseConnection;
 
 import java.sql.Connection;
 

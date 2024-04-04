@@ -1,6 +1,6 @@
-package com.esprit.gui.interfaces;
+package com.esprit.gym_gui.interfaces;
 
-import com.esprit.gui.models.Meal;
+import com.esprit.gym_gui.models.Meal;
 
 import java.util.List;
 

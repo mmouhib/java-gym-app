@@ -9,7 +9,7 @@ CREATE TABLE progress (
                           duration        INT NOT NULL,
                           intensity       INT NOT NULL,
                           notes           VARCHAR(255),
-                          FOREIGN KEY (userId) REFERENCES user (userId)
+                          FOREIGN KEY (userId) REFERENCES user (id)
 );
 
 INSERT INTO progress (userId, activityType, description, date, duration, intensity, notes)

@@ -1,6 +1,6 @@
-package com.esprit.gui.interfaces;
+package com.esprit.gym_gui.interfaces;
 
-import com.esprit.gui.models.Covoiturage;
+import com.esprit.gym_gui.models.Covoiturage;
 
 import java.util.List;
 

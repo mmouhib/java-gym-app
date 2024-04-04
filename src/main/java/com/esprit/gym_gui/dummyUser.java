@@ -1,8 +1,8 @@
-package com.esprit.gui;
+package com.esprit.gym_gui;
 
-import com.esprit.gui.models.User;
-import com.esprit.gui.repository.UserRepository;
-import com.esprit.gui.utils.DatabaseConnection;
+import com.esprit.gym_gui.models.User;
+import com.esprit.gym_gui.repository.UserRepository;
+import com.esprit.gym_gui.utils.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.SQLException;

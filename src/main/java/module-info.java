@@ -10,6 +10,6 @@ module com.esprit.gui {
     requires mysql.connector.j;
     requires junit;
 
-    opens com.esprit.gui to javafx.fxml;
-    exports com.esprit.gui;
+    opens com.esprit.gym_gui to javafx.fxml;
+    exports com.esprit.gym_gui;
 }

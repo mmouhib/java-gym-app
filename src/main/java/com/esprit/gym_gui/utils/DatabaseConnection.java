@@ -1,4 +1,4 @@
-package com.esprit.gui.utils;
+package com.esprit.gym_gui.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
