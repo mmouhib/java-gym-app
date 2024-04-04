@@ -1,4 +1,4 @@
-package com.esprit.gui.models;
+package com.esprit.gym_gui.models;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -13,8 +13,8 @@ public class Progress {
     private int progressId;
     private int userId;  // To associate the progress with a specific user
     private String activityType;  // Type of activity for which progress is being tracked (e.g., exercise, diet)
-    private String description;  // Description of the progress or activity
-    private LocalDate date;  // Date of the progress update
+    private String description;
+    private LocalDate date;  
     private int duration;  // Duration of the activity in minutes or hours
     private int intensity;  // Intensity level of the activity (e.g., low, medium, high)
     private String notes;  // Additional notes or comments about the progress

@@ -1,8 +1,8 @@
-package com.esprit.gui.repository;
+package com.esprit.gym_gui.repository;
 
-import com.esprit.gui.interfaces.IGoal;
-import com.esprit.gui.models.Goal;
-import com.esprit.gui.utils.DatabaseConnection;
+import com.esprit.gym_gui.interfaces.IGoal;
+import com.esprit.gym_gui.models.Goal;
+import com.esprit.gym_gui.utils.DatabaseConnection;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -31,7 +31,6 @@ public class GoalRepository implements IGoal {
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle exceptions as needed
         }
 
         return lastAddedGoal();
@@ -58,7 +57,6 @@ public class GoalRepository implements IGoal {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle exceptions as needed
         }
         return goal;
     }
@@ -86,7 +84,6 @@ public class GoalRepository implements IGoal {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle exceptions as needed
         }
         return goals;
     }
@@ -111,7 +108,6 @@ public class GoalRepository implements IGoal {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle exceptions as needed
         }
         return goal;
     }
@@ -132,7 +128,6 @@ public class GoalRepository implements IGoal {
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle exceptions as needed
         }
     }
 
@@ -144,7 +139,6 @@ public class GoalRepository implements IGoal {
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle exceptions as needed
         }
     }
 
@@ -170,7 +164,6 @@ public class GoalRepository implements IGoal {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle exceptions as needed
         }
         return goals;
     }

@@ -13,7 +13,7 @@ CREATE TABLE goal
     achieved       BOOLEAN       NOT NULL,
     progressNotes  VARCHAR(255),
     PRIMARY KEY (goalId),
-    FOREIGN KEY (userId) REFERENCES user (userId)
+    FOREIGN KEY (userId) REFERENCES user (id)
 );
 
 

@@ -1,6 +1,6 @@
-package com.esprit.gui.interfaces;
+package com.esprit.gym_gui.interfaces;
 
-import com.esprit.gui.models.Goal;
+import com.esprit.gym_gui.models.Goal;
 
 import java.time.LocalDate;
 import java.util.List;

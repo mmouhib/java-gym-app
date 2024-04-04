@@ -1,6 +1,6 @@
-package com.esprit.gui.interfaces;
+package com.esprit.gym_gui.interfaces;
 
-import com.esprit.gui.models.Course;
+import com.esprit.gym_gui.models.Course;
 
 import java.util.List;
 

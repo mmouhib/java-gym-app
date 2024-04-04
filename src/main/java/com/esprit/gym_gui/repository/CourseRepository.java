@@ -1,8 +1,8 @@
-package com.esprit.gui.repository;
+package com.esprit.gym_gui.repository;
 
-import com.esprit.gui.interfaces.ICourse;
-import com.esprit.gui.models.Course;
-import com.esprit.gui.utils.DatabaseConnection;
+import com.esprit.gym_gui.interfaces.ICourse;
+import com.esprit.gym_gui.models.Course;
+import com.esprit.gym_gui.utils.DatabaseConnection;
 
 import java.sql.*;
 import java.util.ArrayList;

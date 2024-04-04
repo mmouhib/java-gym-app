@@ -11,6 +11,6 @@ module com.esprit.gui {
     requires jbcrypt;
     requires junit;
 
-    opens com.esprit.gui to javafx.fxml;
-    exports com.esprit.gui;
+    opens com.esprit.gym_gui to javafx.fxml;
+    exports com.esprit.gym_gui;
 }

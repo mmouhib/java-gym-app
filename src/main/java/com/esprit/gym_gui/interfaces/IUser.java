@@ -1,10 +1,10 @@
-package com.esprit.gui.interfaces;
+package com.esprit.gym_gui.interfaces;
 
 import java.sql.SQLException;
 import java.util.List;
 
-import com.esprit.gui.models.Meal;
-import com.esprit.gui.models.User;
+import com.esprit.gym_gui.models.Meal;
+import com.esprit.gym_gui.models.User;
 
 public interface IUser {
     List<User> findAll() throws SQLException;

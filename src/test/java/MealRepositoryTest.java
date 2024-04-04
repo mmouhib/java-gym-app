@@ -1,5 +1,5 @@
-import com.esprit.gui.models.Meal;
-import com.esprit.gui.repository.MealRepository;
+import com.esprit.gym_gui.models.Meal;
+import com.esprit.gym_gui.repository.MealRepository;
 
 import org.junit.Test;
 

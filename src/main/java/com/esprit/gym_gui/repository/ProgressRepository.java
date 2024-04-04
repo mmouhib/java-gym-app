@@ -1,8 +1,8 @@
-package com.esprit.gui.repository;
+package com.esprit.gym_gui.repository;
 
-import com.esprit.gui.interfaces.IProgress;
-import com.esprit.gui.models.Progress;
-import com.esprit.gui.utils.DatabaseConnection;
+import com.esprit.gym_gui.interfaces.IProgress;
+import com.esprit.gym_gui.models.Progress;
+import com.esprit.gym_gui.utils.DatabaseConnection;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -31,7 +31,6 @@ public class ProgressRepository implements IProgress {
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle exceptions as needed
         }
 
         return lastAddedProgress();
@@ -56,7 +55,6 @@ public class ProgressRepository implements IProgress {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle exceptions as needed
         }
         return progress;
     }
@@ -82,7 +80,6 @@ public class ProgressRepository implements IProgress {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle exceptions as needed
         }
         return progressList;
     }
@@ -102,7 +99,6 @@ public class ProgressRepository implements IProgress {
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle exceptions as needed
         }
     }
 
@@ -114,7 +110,6 @@ public class ProgressRepository implements IProgress {
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle exceptions as needed
         }
     }
 
@@ -138,7 +133,6 @@ public class ProgressRepository implements IProgress {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle exceptions as needed
         }
         return progressList;
     }
@@ -160,7 +154,6 @@ public class ProgressRepository implements IProgress {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle exceptions as needed
         }
         return progress;
     }
