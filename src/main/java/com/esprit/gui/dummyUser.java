@@ -26,6 +26,7 @@ public class dummyUser {
         newUser.setLast_name("user");
         newUser.setPhone("1234567890");
         newUser.setEmail("test@example.tn");
+        newUser.setPassword("0000");
         newUser.setAge(25);
         newUser.setGender("Male");
         newUser.setWeight(70.0f);
@@ -44,6 +45,26 @@ public class dummyUser {
         for (User user : users) {
             System.out.println(user);
         }
+
+        // test sign in method (booth credentials are corrects)
+        User s = newUser;
+        s.setEmail("test@example.tn");
+        s.setPassword("0000");
+
+        System.out.println(u.signIn(s));
+
+        // test sign in method (email is incorrect)
+        s.setEmail("balabla@blabla.tn");
+        System.out.println(u.signIn(s));
+
+        // test sign in method (password is incorrect)
+        s.setEmail("test@example.tn");
+        s.setPassword("0");
+        System.out.println(u.signIn(newUser));
+
+        // test sign in method (booth credentials are incorrect)
+        s.setEmail("balabla2@blabla.tn");
+        System.out.println(u.signIn(newUser));
 
         // Update user number 4
         newUser.setFirst_name("test-modify");

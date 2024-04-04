@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1087.0" style="-fx-background-color: #1586da;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.gui.controllers.FoodController">
+    <children>
+        <AnchorPane prefHeight="519.0" prefWidth="262.0" style="-fx-background-color: #1d33c4;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+
+                <Pane layoutY="86.0" prefHeight="61.0" prefWidth="262.0" style="-fx-background-color: #2013d5; -fx-background-radius: 5;">
+                    <children>
+                        <Label layoutX="25.0" layoutY="17.0" text="Food page" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+            <Button fx:id="navigateButton" onAction="#goToHome" layoutY="181.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="262.0" text="Return to home page" />
+            </children></AnchorPane>
+        <Pane layoutX="262.0" prefHeight="649.0" prefWidth="631.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="262.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Pane layoutX="76.0" layoutY="106.0" />
+                <Pane layoutX="316.0" layoutY="106.0" prefHeight="202.0" prefWidth="179.0">
+               <children>
+                  <Text fill="#f8f8f8" layoutX="-144.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nutrition management" textAlignment="CENTER">
+                     <font>
+                        <Font size="41.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
+                <Pane layoutX="559.0" layoutY="106.0" prefHeight="190.0" prefWidth="174.0" />
+                <Circle fill="#45abf8" layoutX="769.0" layoutY="45.0" radius="39.0" strokeType="INSIDE">
+                    <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                            <stops>
+                                <Stop color="BLACK" />
+                                <Stop color="WHITE" offset="1.0" />
+                            </stops>
+                        </LinearGradient>
+                    </stroke>
+                </Circle>
+                <Button fx:id="logout" layoutX="734.0" layoutY="33.0" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: transparent;" text="Log out" />
+                  <Button layoutX="569.0" layoutY="259.0" mnemonicParsing="false" onAction="#goToTracking" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../css/fullpackstyling.css" />
+                  <Circle layoutX="653.0" layoutY="346.0" radius="50.0" strokeType="INSIDE">
+                      <fill>
+                          <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
+                              <stops>
+                                  <Stop color="#4f79ff" />
+                                  <Stop color="WHITE" offset="0.9961685823754789" />
+                                  <Stop color="#4f79ff" offset="1.0" />
+                              </stops>
+                          </LinearGradient>
+                      </fill>
+                  </Circle>
+                  <ImageView fitHeight="49.0" fitWidth="37.0" layoutX="635.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="@../../../../pics/food/tracking.png" />
+                      </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="570.0" layoutY="405.0" prefHeight="17.0" prefWidth="168.0" text="tracking" textFill="WHITE">
+                      <font>
+                          <Font name="Arial Bold" size="13.0" />
+                      </font>
+            </Label>
+                  <Button layoutX="321.0" layoutY="259.0" mnemonicParsing="false" onAction="#goToMeals" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../css/fullpackstyling.css" />
+                  <Circle layoutX="405.0" layoutY="346.0" radius="50.0" strokeType="INSIDE">
+                      <stroke>
+                          <LinearGradient endX="1.0" endY="1.0">
+                              <stops>
+                                  <Stop color="BLACK" />
+                                  <Stop color="WHITE" offset="1.0" />
+                              </stops>
+                          </LinearGradient>
+                      </stroke>
+                      <fill>
+                          <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
+                              <stops>
+                                  <Stop color="#68479f" />
+                                  <Stop color="WHITE" offset="1.0" />
+                              </stops>
+                          </LinearGradient>
+                      </fill>
+                  </Circle>
+                  <ImageView fitHeight="49.0" fitWidth="37.0" layoutX="387.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="@../../../../pics/food/meal.png" />
+                      </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="322.0" layoutY="405.0" prefHeight="17.0" prefWidth="168.0" text="meals" textFill="WHITE">
+                      <font>
+                          <Font name="Arial Bold" size="13.0" />
+                      </font>
+            </Label>
+                  <Button fx:id="genaral" layoutX="90.0" layoutY="259.0" mnemonicParsing="false" onAction="#goToPlates" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../css/fullpackstyling.css" />
+                  <Circle layoutX="174.0" layoutY="346.0" radius="50.0" strokeType="INSIDE">
+                      <stroke>
+                          <LinearGradient endX="1.0" endY="1.0">
+                              <stops>
+                                  <Stop color="BLACK" />
+                                  <Stop color="WHITE" offset="1.0" />
+                              </stops>
+                          </LinearGradient>
+                      </stroke>
+                      <fill>
+                          <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
+                              <stops>
+                                  <Stop color="#03b5fc" />
+                                  <Stop color="WHITE" offset="1.0" />
+                              </stops>
+                          </LinearGradient>
+                      </fill>
+                  </Circle>
+                  <ImageView fitHeight="49.0" fitWidth="37.0" layoutX="156.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="@../../../../pics/food/plate.png" />
+                      </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="84.0" layoutY="405.0" prefHeight="17.0" prefWidth="174.0" text="Plates" textFill="WHITE">
+                      <font>
+                          <Font name="Arial Bold" size="13.0" />
+                      </font>
+            </Label>
+            </children>
+        </Pane>
+        <Pane layoutX="383.0" layoutY="-328.0" prefHeight="303.0" prefWidth="467.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" />
+    </children>
+</AnchorPane>

@@ -8,18 +8,14 @@ public class DatabaseConnection {
     private static String URL = "jdbc:mysql://localhost:3306/";
     private static String USER = "root";
     private static String DB_NAME = "gym";
-
-    private static String PASSWORD = "";
-    private Connection connection;
-
+    private static String PASSWORD = "root";
 
     static {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection(URL+DB_NAME, USER, PASSWORD);
-            System.out.println("coonected to database");
+            con = DriverManager.getConnection(URL + DB_NAME, USER, PASSWORD);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("could not connect to the database.");
         }
     }
 

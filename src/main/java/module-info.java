@@ -8,12 +8,11 @@ module com.esprit.gui {
     requires java.sql;
     requires lombok;
     requires mysql.connector.j;
-    requires junit;
+    requires jbcrypt;
 
     opens com.esprit.gui to javafx.fxml;
-
     exports com.esprit.gui;
-    exports com.esprit.gui.utils;
+    exports com.esprit.gui.controllers;
     exports com.esprit.gui.models;
-    exports com.esprit.gui.repository;
+    opens com.esprit.gui.controllers to javafx.fxml;
 }

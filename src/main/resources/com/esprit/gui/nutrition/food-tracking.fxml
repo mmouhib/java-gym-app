@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="649.0" prefWidth="1087.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.gui.controllers.FoodTracking">
+   <children>
+      <DatePicker fx:id="datePicker" layoutX="456.0" layoutY="155.0" prefHeight="27.0" prefWidth="180.0" />
+      <Text layoutX="411.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+      <ProgressBar fx:id="caloriesBar" layoutX="446.0" layoutY="341.0" prefWidth="200.0" progress="0.0" />
+      <ProgressBar fx:id="proteinBar" layoutX="129.0" layoutY="298.0" prefWidth="200.0" progress="0.0" />
+      <ProgressBar fx:id="carbsBar" layoutX="784.0" layoutY="298.0" prefWidth="200.0" progress="0.0" />
+      <ProgressBar fx:id="fatBar" layoutX="129.0" layoutY="439.0" prefWidth="200.0" progress="0.0" />
+      <ProgressBar fx:id="sugarBar" layoutX="784.0" layoutY="439.0" prefWidth="200.0" progress="0.0" />
+      <Text layoutX="446.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calories" />
+      <Text layoutX="129.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fat" />
+      <Text layoutX="129.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Protein" />
+      <Text layoutX="784.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carbs" />
+      <Text layoutX="784.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sugar" />
+   </children>
+</AnchorPane>
