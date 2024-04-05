@@ -1,0 +1,40 @@
+.custom-button {
+    -fx-background-color: #254f4d;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.3) , 2 , 0.0 , 0 , 1 );
+    -fx-cursor: hand;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-min-width: 80px;
+    -fx-max-width: 100px;
+    -fx-min-height: 30px;
+    -fx-max-height: 40px;
+    -fx-alignment: center;
+    -fx-transition: background-color 0.3s, text-fill 0.3s;
+}
+
+.custom-button:hover {
+    -fx-background-color: #226083;
+}
+
+.custom-button:pressed {
+    -fx-background-color: #2a63a8;
+}
+
+.custom-button:focused {
+    -fx-border-color: #4a90e2;
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
+}
+
+.custom-button:disabled {
+    -fx-opacity: 0.5;
+    -fx-cursor: default;
+}
+
+.custom-button:disabled:hover {
+    -fx-background-color: #4a90e2;
+}

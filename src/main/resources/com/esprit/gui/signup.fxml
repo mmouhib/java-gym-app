@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="593.0" prefWidth="417.0" spacing="10" style="-fx-background-color: #0888af;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.esprit.gui.controllers.SignUpController">
+<VBox alignment="CENTER" prefHeight="593.0" prefWidth="417.0" spacing="10" style="-fx-background-color: #62E8B3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.gui.controllers.SignUpController">
     <Label style="-fx-font-size: 20px;" text="Sign Up" />
 
     <GridPane alignment="CENTER" hgap="10" vgap="5">
@@ -36,7 +35,7 @@
         <TextField fx:id="ageField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
         <Label text="Gender:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-        <ComboBox fx:id="genderComboBox" GridPane.columnIndex="1" GridPane.rowIndex="6">
+        <ComboBox fx:id="genderComboBox" prefHeight="24.0" prefWidth="229.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="Male" />
@@ -70,7 +69,7 @@
         <TextField fx:id="targetWeightField" GridPane.columnIndex="1" GridPane.rowIndex="14" />
 
         <Label text="Role:" GridPane.columnIndex="0" GridPane.rowIndex="15" />
-        <ComboBox fx:id="roleComboBox" GridPane.columnIndex="1" GridPane.rowIndex="15">
+        <ComboBox fx:id="roleComboBox" prefHeight="24.0" prefWidth="232.0" GridPane.columnIndex="1" GridPane.rowIndex="15">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="user" />
@@ -101,8 +100,7 @@
             <RowConstraints />
         </rowConstraints>
     </GridPane>
-    <Button fx:id="signup1" onAction="#signUp" text="Sign Up" />
-
-    <Button fx:id="signin" onAction="#signIn" text="Sign in" />
-    <Button fx:id="clear" onAction="#clearFields" text="clear" />
+    <Button fx:id="signup1" layoutX="110.0" layoutY="90.0" mnemonicParsing="false" onAction="#signUp" styleClass="custom-button" stylesheets="@../../../css/buttonStyle.css" text="Sign Up" />
+    <Button fx:id="signin" layoutX="110.0" layoutY="90.0" mnemonicParsing="false" onAction="#signIn" styleClass="custom-button" stylesheets="@../../../css/buttonStyle.css" text="Sign in" />
+    <Button fx:id="clear" layoutX="110.0" layoutY="90.0" mnemonicParsing="false" onAction="#clearFields" styleClass="custom-button" stylesheets="@../../../css/buttonStyle.css" text="clear" />
 </VBox>
