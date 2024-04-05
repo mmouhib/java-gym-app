@@ -12,31 +12,30 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="593.0" prefWidth="417.0" spacing="10" style="-fx-background-color: #0888af;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.esprit.gui.controllers.SignUpController">
+<VBox alignment="CENTER" prefHeight="691.0" prefWidth="969.0" spacing="10" style="-fx-background-color: #0888af;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.gui.controllers.SignUpController">
     <Label style="-fx-font-size: 20px;" text="Sign Up" />
 
     <GridPane alignment="CENTER" hgap="10" vgap="5">
-        <Label text="First Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <TextField fx:id="firstNameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Label prefHeight="16.0" prefWidth="354.0" text="First Name:" GridPane.columnIndex="1" />
+        <TextField fx:id="firstNameField" prefHeight="26.0" prefWidth="310.0" GridPane.columnIndex="2" />
 
-        <Label text="Last Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-        <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Label text="Last Name:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <TextField fx:id="lastNameField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
 
-        <Label text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-        <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Label text="Phone:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <TextField fx:id="phoneField" GridPane.columnIndex="2" GridPane.rowIndex="2" />
 
-        <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-        <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <Label text="Email:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <TextField fx:id="emailField" GridPane.columnIndex="2" GridPane.rowIndex="3" />
 
-        <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-        <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <Label text="Password:" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <PasswordField fx:id="passwordField" GridPane.columnIndex="2" GridPane.rowIndex="4" />
 
-        <Label text="Age:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-        <TextField fx:id="ageField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+        <Label text="Age:" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+        <TextField fx:id="ageField" GridPane.columnIndex="2" GridPane.rowIndex="5" />
 
-        <Label text="Gender:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-        <ComboBox fx:id="genderComboBox" GridPane.columnIndex="1" GridPane.rowIndex="6">
+        <Label text="Gender:" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+        <ComboBox fx:id="genderComboBox" prefHeight="24.0" prefWidth="312.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="Male" />
@@ -45,32 +44,32 @@
             </items>
         </ComboBox>
 
-        <Label text="Weight (kg):" GridPane.columnIndex="0" GridPane.rowIndex="7" />
-        <TextField fx:id="weightField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+        <Label text="Weight (kg):" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+        <TextField fx:id="weightField" GridPane.columnIndex="2" GridPane.rowIndex="7" />
 
-        <Label text="Height (cm):" GridPane.columnIndex="0" GridPane.rowIndex="8" />
-        <TextField fx:id="heightField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+        <Label text="Height (cm):" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+        <TextField fx:id="heightField" GridPane.columnIndex="2" GridPane.rowIndex="8" />
 
-        <Label text="Calories:" GridPane.columnIndex="0" GridPane.rowIndex="9" />
-        <TextField fx:id="caloriesField" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+        <Label text="Calories:" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+        <TextField fx:id="caloriesField" GridPane.columnIndex="2" GridPane.rowIndex="9" />
 
-        <Label text="Protein (g):" GridPane.columnIndex="0" GridPane.rowIndex="10" />
-        <TextField fx:id="proteinField" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+        <Label text="Protein (g):" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+        <TextField fx:id="proteinField" GridPane.columnIndex="2" GridPane.rowIndex="10" />
 
-        <Label text="Carbs (g):" GridPane.columnIndex="0" GridPane.rowIndex="11" />
-        <TextField fx:id="carbsField" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+        <Label text="Carbs (g):" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+        <TextField fx:id="carbsField" GridPane.columnIndex="2" GridPane.rowIndex="11" />
 
-        <Label text="Fat (g):" GridPane.columnIndex="0" GridPane.rowIndex="12" />
-        <TextField fx:id="fatField" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+        <Label text="Fat (g):" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+        <TextField fx:id="fatField" GridPane.columnIndex="2" GridPane.rowIndex="12" />
 
-        <Label text="Sugar (g):" GridPane.columnIndex="0" GridPane.rowIndex="13" />
-        <TextField fx:id="sugarField" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+        <Label text="Sugar (g):" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+        <TextField fx:id="sugarField" GridPane.columnIndex="2" GridPane.rowIndex="13" />
 
-        <Label text="Target Weight (kg):" GridPane.columnIndex="0" GridPane.rowIndex="14" />
-        <TextField fx:id="targetWeightField" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+        <Label text="Target Weight (kg):" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+        <TextField fx:id="targetWeightField" GridPane.columnIndex="2" GridPane.rowIndex="14" />
 
-        <Label text="Role:" GridPane.columnIndex="0" GridPane.rowIndex="15" />
-        <ComboBox fx:id="roleComboBox" GridPane.columnIndex="1" GridPane.rowIndex="15">
+        <Label text="Role:" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+        <ComboBox fx:id="roleComboBox" prefHeight="24.0" prefWidth="312.0" GridPane.columnIndex="2" GridPane.rowIndex="15">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="user" />
@@ -79,8 +78,9 @@
             </items>
         </ComboBox>
         <columnConstraints>
-            <ColumnConstraints />
-            <ColumnConstraints />
+            <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
+            <ColumnConstraints maxWidth="354.0" minWidth="354.0" prefWidth="354.0" />
+         <ColumnConstraints />
         </columnConstraints>
         <rowConstraints>
             <RowConstraints />
