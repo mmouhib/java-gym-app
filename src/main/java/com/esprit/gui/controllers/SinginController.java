@@ -1,8 +1,9 @@
 package com.esprit.gui.controllers;
+
 import com.esprit.gui.models.User;
 import com.esprit.gui.repository.UserRepository;
 import javafx.event.ActionEvent;
-        import javafx.fxml.FXML;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Rectangle2D;
@@ -16,8 +17,6 @@ import javafx.stage.Stage;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.sql.SQLException;
 
 import static java.lang.System.exit;

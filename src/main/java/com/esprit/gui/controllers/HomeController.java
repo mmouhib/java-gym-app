@@ -7,9 +7,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class HomeController {
@@ -31,6 +31,12 @@ public class HomeController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    void saveData(String data, String path) throws IOException{
+        //Files.writeString(fileName, data);
+        FileWriter writer = new FileWriter(path);
+        writer.write(data);
+        writer.close();
     }
 
     @FXML

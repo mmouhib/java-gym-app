@@ -2,15 +2,21 @@ package com.esprit.gui.controllers;
 
 import com.esprit.gui.models.User;
 import com.esprit.gui.repository.UserRepository;
+import com.esprit.gui.utils.api.EmailValidator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -75,7 +81,7 @@ public class SignUpController {
 
 
     @FXML
-    private void signUp(ActionEvent event) throws SQLException {
+    private void signUp(ActionEvent event) throws SQLException, IOException {
         // Perform signup logic here
         User u = new User();
         UserRepository ur = new UserRepository();
@@ -98,8 +104,53 @@ public class SignUpController {
 
         // test output
         //System.out.println(u);
-        ur.save(u);
 
+        //test Email Verification API
+        EmailValidator ev = new EmailValidator();
+        boolean validEmail = ev.verify(emailField.getText());
+
+        if(validEmail) {
+            ur.save(u);
+            String email = u.getEmail();
+            u = ur.findByEmail(email);
+            saveData(String.valueOf(u.getId()), "set-id.txt");
+            try {
+                Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/home.fxml"));
+                Scene scene = new Scene(p, 1100, 650);
+                Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                appStage.setScene(scene);
+                appStage.show();
+
+            } catch (IOException exp) {
+                throw new RuntimeException(exp);
+            }
+        }else {
+            Stage errorStage = new Stage();
+
+            Label errorMessage = new Label("Invalid email\ud83d\ude28 ");
+            errorMessage.setStyle("-fx-text-fill: #ffffff; -fx-font-size: 14px;"); // Setting style for the error message
+
+            VBox root = new VBox(10);
+            root.getChildren().add(errorMessage);
+            root.setPadding(new Insets(20));
+            root.setStyle("-fx-background-color: #b80b21;"); // Inline CSS styling for the background color
+
+            Scene scene = new Scene(root, 400, 100);
+            errorStage.setScene(scene);
+            errorStage.setTitle("Error");
+            errorStage.show();
+            // Center error scene
+            Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+            errorStage.setX((primScreenBounds.getWidth() - errorStage.getWidth()) / 2);
+            errorStage.setY((primScreenBounds.getHeight() - errorStage.getHeight()) / 2);
+        }
+
+    }
+    void saveData(String data, String path) throws IOException{
+        //Files.writeString(fileName, data);
+        FileWriter writer = new FileWriter(path);
+        writer.write(data);
+        writer.close();
     }
     @FXML
     private void signIn(ActionEvent event) throws SQLException {
