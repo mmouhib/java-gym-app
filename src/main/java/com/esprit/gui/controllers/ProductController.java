@@ -2,8 +2,12 @@ package com.esprit.gui.controllers;
 
 import com.esprit.gui.utils.api.FoodMacros;
 import com.esprit.gui.utils.api.PlateResponse;
+import javafx.beans.binding.Bindings;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -28,11 +32,11 @@ public class ProductController implements Initializable {
     public Text name;
     public AnchorPane dataAnchor;
     public TextField searchInput;
+    public PieChart chart;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         dataAnchor.setVisible(false);
-
     }
 
     public void searchForProduct(ActionEvent actionEvent) {
@@ -48,6 +52,22 @@ public class ProductController implements Initializable {
             this.salt.setText(String.valueOf(plateResponse.getSalt()));
             this.name.setText(plateResponse.getName());
             this.productImage.setImage(new Image(plateResponse.getImageUrl()));
+
+            ObservableList<PieChart.Data> chartValues = FXCollections.observableArrayList(
+                    new PieChart.Data("protein", plateResponse.getProtein()),
+                    new PieChart.Data("carbs", plateResponse.getCarbs()),
+                    new PieChart.Data("fat", plateResponse.getFat()),
+                    new PieChart.Data("sugar", plateResponse.getSugar())
+            );
+
+            chartValues.forEach(data -> data.nameProperty().bind(
+                    Bindings.concat(
+                            data.getName(), " ", data.pieValueProperty()
+                    )
+            ));
+
+            chart.getData().addAll(chartValues);
+
             this.dataAnchor.setVisible(true);
         } catch (Exception ignored) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
