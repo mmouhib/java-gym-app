@@ -301,4 +301,17 @@ public class PlatesController {
             throw new RuntimeException(e);
         }
     }
+
+    public void goToProducts(ActionEvent event) {
+        try {
+            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/nutrition/product.fxml"));
+            Scene scene = new Scene(p, 1100, 650);
+            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            appStage.setScene(scene);
+            appStage.show();
+            AuthSessionUtils.LogOut();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

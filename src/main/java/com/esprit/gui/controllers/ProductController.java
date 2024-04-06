@@ -40,6 +40,10 @@ public class ProductController implements Initializable {
     }
 
     public void searchForProduct(ActionEvent actionEvent) {
+
+        // reset the chart's data
+        chart.getData().clear();
+
         FoodMacros foodMacros = new FoodMacros(searchInput.getText());
         try {
             PlateResponse plateResponse = foodMacros.parseResponse();
@@ -74,8 +78,6 @@ public class ProductController implements Initializable {
             alert.setContentText("Please enter a valid barcode. ");
             alert.show();
             this.resetData();
-
-
         }
     }
 
@@ -90,6 +92,4 @@ public class ProductController implements Initializable {
         this.name.setText("x");
         this.dataAnchor.setVisible(false);
     }
-
-
 }

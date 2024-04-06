@@ -11,20 +11,20 @@
 
 <AnchorPane prefHeight="648.0" prefWidth="1101.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.gui.controllers.ProductController">
     <children>
-        <ImageView fitHeight="150.0" fitWidth="522.0" layoutX="310.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="150.0" fitWidth="522.0" layoutX="310.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@../../../../pics/food/fooddb.png" />
         </ImageView>
-        <TextField fx:id="searchInput" layoutX="371.0" layoutY="196.0" promptText="food barcode">
+        <TextField fx:id="searchInput" layoutX="371.0" layoutY="242.0" promptText="food barcode">
             <font>
                 <Font size="19.0" />
             </font>
         </TextField>
-        <Button fx:id="findButton" layoutX="638.0" layoutY="196.0" mnemonicParsing="false" onAction="#searchForProduct" text="find">
+        <Button fx:id="findButton" layoutX="638.0" layoutY="242.0" mnemonicParsing="false" onAction="#searchForProduct" text="find">
             <font>
                 <Font size="19.0" />
             </font>
         </Button>
-        <AnchorPane fx:id="dataAnchor" layoutX="32.0" layoutY="252.0" prefHeight="369.0" prefWidth="1069.0">
+        <AnchorPane fx:id="dataAnchor" layoutX="32.0" layoutY="298.0" prefHeight="369.0" prefWidth="1069.0">
             <children>
                 <Text layoutX="307.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
                     <font>
@@ -110,5 +110,22 @@
                 <PieChart fx:id="chart" layoutX="14.0" layoutY="43.0" legendVisible="false" prefHeight="284.0" prefWidth="350.0" />
             </children>
         </AnchorPane>
+      <Text layoutX="123.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Finder">
+         <font>
+            <Font name="Lohit Kannada" size="31.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="98.0" fitWidth="76.0" layoutX="39.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../pics/food/tracking.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="home" layoutX="294.0" layoutY="28.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="32.0" prefWidth="85.0" text="Home" />
+      <Button fx:id="nuitrition" layoutX="464.0" layoutY="28.0" mnemonicParsing="false" onAction="#goToNutrition" prefHeight="32.0" prefWidth="85.0" text="Nutrition" />
+      <Button fx:id="tracking" layoutX="549.0" layoutY="28.0" mnemonicParsing="false" onAction="#goToTracking" prefHeight="32.0" prefWidth="85.0" text="Tracking" />
+      <Button fx:id="plates" layoutX="634.0" layoutY="28.0" mnemonicParsing="false" onAction="#goToMeals" prefHeight="32.0" prefWidth="85.0" text="Meals" />
+      <Button fx:id="profile" layoutX="719.0" layoutY="28.0" mnemonicParsing="false" onAction="#goToProfile" prefHeight="32.0" prefWidth="85.0" text="My profile" />
+      <Button fx:id="logout" layoutX="1005.0" layoutY="28.0" mnemonicParsing="false" onAction="#logOut" prefHeight="32.0" prefWidth="85.0" text="Log out" />
+      <Button fx:id="products" layoutX="379.0" layoutY="28.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="32.0" prefWidth="85.0" text="Products" />
     </children>
 </AnchorPane>
