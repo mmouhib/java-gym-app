@@ -14,43 +14,64 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="653.0" prefWidth="1108.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.gui.controllers.MealsController">
+<AnchorPane prefHeight="653.0" prefWidth="1108.0" xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.gui.controllers.MealsController">
     <children>
-        <Button fx:id="home" layoutX="284.0" layoutY="18.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="32.0" prefWidth="85.0" text="Home" />
-        <Button fx:id="nutrition" layoutX="454.0" layoutY="18.0" mnemonicParsing="false" onAction="#goToNutrition" prefHeight="32.0" prefWidth="85.0" text="Nutrition" />
-        <Button fx:id="tracking" layoutX="539.0" layoutY="18.0" mnemonicParsing="false" onAction="#goToTracking" prefHeight="32.0" prefWidth="85.0" text="Tracking" />
-        <Button fx:id="plates" layoutX="624.0" layoutY="18.0" mnemonicParsing="false" onAction="#goToMeals" prefHeight="32.0" prefWidth="85.0" text="Plates" />
-        <Button fx:id="profile" layoutX="709.0" layoutY="18.0" mnemonicParsing="false" onAction="#goToProfile" prefHeight="32.0" prefWidth="85.0" text="My profile" />
-        <Button fx:id="logout" layoutX="1009.0" layoutY="18.0" mnemonicParsing="false" onAction="#logOut" prefHeight="32.0" prefWidth="85.0" text="Log out" />
-        <Button fx:id="products" layoutX="369.0" layoutY="18.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="32.0" prefWidth="85.0" text="Products" />
-        <TextField fx:id="name_input" layoutX="164.0" layoutY="169.0" promptText="name" />
-        <Button fx:id="saveButton" layoutX="165.0" layoutY="526.0" mnemonicParsing="false" onAction="#onSave" text="Save" />
-        <Button fx:id="resetButton" layoutX="280.0" layoutY="526.0" mnemonicParsing="false" onAction="#clearForm" text="Reset" />
-        <Slider fx:id="quantity" layoutX="165.0" layoutY="238.0" max="10" onDragDone="#updateDateInput" prefHeight="16.0" prefWidth="151.0" />
-        <Text fx:id="quantityValue" layoutX="328.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
-        <Text layoutX="165.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="quantity" />
-        <DatePicker fx:id="dateInput" layoutX="164.0" layoutY="299.0" prefHeight="24.0" prefWidth="171.0" />
-        <CheckBox fx:id="isToday" layoutX="164.0" layoutY="347.0" mnemonicParsing="false" onAction="#updateDateInput" text="today" />
-        <Text layoutX="164.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date" />
-        <ComboBox fx:id="type" layoutX="165.0" layoutY="409.0" prefHeight="24.0" prefWidth="171.0" promptText="plate" />
-        <Text layoutX="165.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plate" />
-        <TableView layoutX="497.0" layoutY="151.0" prefHeight="369.0" prefWidth="477.0">
+        <Button fx:id="home" layoutX="284.0" layoutY="18.0" mnemonicParsing="false" onAction="#goToHome"
+                prefHeight="32.0" prefWidth="85.0" text="Home"/>
+        <Button fx:id="nutrition" layoutX="454.0" layoutY="18.0" mnemonicParsing="false" onAction="#goToNutrition"
+                prefHeight="32.0" prefWidth="85.0" text="Nutrition"/>
+        <Button fx:id="tracking" layoutX="539.0" layoutY="18.0" mnemonicParsing="false" onAction="#goToTracking"
+                prefHeight="32.0" prefWidth="85.0" text="Tracking"/>
+        <Button fx:id="plates" layoutX="624.0" layoutY="18.0" mnemonicParsing="false" onAction="#goToMeals"
+                prefHeight="32.0" prefWidth="85.0" text="Plates"/>
+        <Button fx:id="profile" layoutX="709.0" layoutY="18.0" mnemonicParsing="false" onAction="#goToProfile"
+                prefHeight="32.0" prefWidth="85.0" text="My profile"/>
+        <Button fx:id="logout" layoutX="1009.0" layoutY="18.0" mnemonicParsing="false" onAction="#logOut"
+                prefHeight="32.0" prefWidth="85.0" text="Log out"/>
+        <Button fx:id="products" layoutX="369.0" layoutY="18.0" mnemonicParsing="false" onAction="#goToHome"
+                prefHeight="32.0" prefWidth="85.0" text="Products"/>
+        <TextField fx:id="name_input" layoutX="164.0" layoutY="169.0" promptText="name"/>
+        <Button fx:id="saveButton" layoutX="165.0" layoutY="526.0" mnemonicParsing="false" onAction="#onSave"
+                text="Save"/>
+        <Button fx:id="resetButton" layoutX="280.0" layoutY="526.0" mnemonicParsing="false" onAction="#clearForm"
+                text="Reset"/>
+        <Slider fx:id="quantity_input" layoutX="165.0" layoutY="238.0" max="10" onDragDone="#updateDateInput"
+                prefHeight="16.0" prefWidth="151.0"/>
+        <Text fx:id="quantityValue" layoutX="328.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0"/>
+        <Text layoutX="165.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="quantity"/>
+        <DatePicker fx:id="dateInput" layoutX="164.0" layoutY="299.0" prefHeight="24.0" prefWidth="171.0"/>
+        <CheckBox fx:id="isToday" layoutX="164.0" layoutY="347.0" mnemonicParsing="false" onAction="#updateDateInput"
+                  text="today"/>
+        <Text layoutX="164.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date"/>
+        <ComboBox fx:id="type_input" layoutX="165.0" layoutY="409.0" prefHeight="24.0" prefWidth="171.0"
+                  promptText="plate"/>
+        <Text layoutX="165.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plate"/>
+        <TableView fx:id="mealsTableView" layoutX="497.0" layoutY="151.0" prefHeight="369.0" prefWidth="556.0">
             <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn fx:id="id" prefWidth="63.0" text="ref" visible="false"/>
+                <TableColumn fx:id="name" prefWidth="87.0" text="name"/>
+                <TableColumn fx:id="quantity" prefWidth="70.0" text="quantity"/>
+                <TableColumn fx:id="date" prefWidth="121.0" text="date"/>
+                <TableColumn fx:id="plate" prefWidth="125.0" text="plate"/>
+                <TableColumn fx:id="type" prefWidth="150.0" text="type"/>
             </columns>
         </TableView>
         <Text layoutX="113.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MEALS">
             <font>
-                <Font name="Lohit Kannada" size="31.0" />
+                <Font name="Lohit Kannada" size="31.0"/>
             </font>
         </Text>
-        <ImageView fitHeight="98.0" fitWidth="76.0" layoutX="29.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="98.0" fitWidth="76.0" layoutX="29.0" layoutY="18.0" pickOnBounds="true"
+                   preserveRatio="true">
             <image>
-                <Image url="@../../../../pics/food/meal.png" />
+                <Image url="@../../../../pics/food/meal.png"/>
             </image>
         </ImageView>
-        <ComboBox fx:id="category" layoutX="164.0" layoutY="479.0" prefHeight="24.0" prefWidth="171.0" promptText="category" />
-        <Text layoutX="164.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category" />
+        <ComboBox fx:id="category" layoutX="164.0" layoutY="479.0" prefHeight="24.0" prefWidth="171.0"
+                  promptText="category"/>
+        <Text layoutX="164.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category"/>
+        <Button fx:id="deleteButton" onAction="#onDelete" layoutX="497.0" layoutY="538.0" mnemonicParsing="false"
+                prefHeight="24.0" prefWidth="556.0" text="Delete"/>
     </children>
 </AnchorPane>
