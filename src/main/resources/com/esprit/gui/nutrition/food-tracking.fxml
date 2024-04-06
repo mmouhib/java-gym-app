@@ -4,25 +4,60 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="649.0" prefWidth="1087.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.gui.controllers.FoodTracking">
+<AnchorPane prefHeight="649.0" prefWidth="1087.0" xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.gui.controllers.FoodTracking">
     <children>
-        <DatePicker fx:id="datePicker" layoutX="332.0" layoutY="155.0" prefHeight="27.0" prefWidth="180.0" />
-        <Text layoutX="287.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
-        <ProgressBar fx:id="caloriesBar" layoutX="446.0" layoutY="341.0" prefWidth="200.0" progress="0.0" />
-        <ProgressBar fx:id="proteinBar" layoutX="129.0" layoutY="298.0" prefWidth="200.0" progress="0.0" />
-        <ProgressBar fx:id="carbsBar" layoutX="784.0" layoutY="298.0" prefWidth="200.0" progress="0.0" />
-        <ProgressBar fx:id="fatBar" layoutX="129.0" layoutY="439.0" prefWidth="200.0" progress="0.0" />
-        <ProgressBar fx:id="sugarBar" layoutX="784.0" layoutY="439.0" prefWidth="200.0" progress="0.0" />
-        <Text fx:id="caloriesValue" layoutX="446.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calories" />
-        <Text fx:id="fatValue" layoutX="129.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fat" />
-        <Text fx:id="proteinValue" layoutX="129.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Protein" />
-        <Text fx:id="carbsValue" layoutX="784.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carbs" />
-        <Text fx:id="sugarValue" layoutX="784.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sugar" />
-        <Button fx:id="searchButton" layoutX="731.0" layoutY="156.0" mnemonicParsing="false" onAction="#search" prefHeight="27.0" prefWidth="75.0" text="Search" />
-        <ComboBox fx:id="timeComboBox" layoutX="567.0" layoutY="156.0" prefHeight="27.0" prefWidth="153.0" />
-        <Text layoutX="526.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time" />
+        <DatePicker fx:id="datePicker" layoutX="332.0" layoutY="155.0" prefHeight="27.0" prefWidth="180.0"/>
+        <Text layoutX="287.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date"/>
+        <ProgressBar fx:id="caloriesBar" layoutX="446.0" layoutY="341.0" prefWidth="200.0" progress="0.0"/>
+        <ProgressBar fx:id="proteinBar" layoutX="129.0" layoutY="298.0" prefWidth="200.0" progress="0.0"/>
+        <ProgressBar fx:id="carbsBar" layoutX="784.0" layoutY="298.0" prefWidth="200.0" progress="0.0"/>
+        <ProgressBar fx:id="fatBar" layoutX="129.0" layoutY="439.0" prefWidth="200.0" progress="0.0"/>
+        <ProgressBar fx:id="sugarBar" layoutX="784.0" layoutY="439.0" prefWidth="200.0" progress="0.0"/>
+        <Text fx:id="caloriesValue" layoutX="446.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Calories"/>
+        <Text fx:id="fatValue" layoutX="129.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fat"/>
+        <Text fx:id="proteinValue" layoutX="129.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Protein"/>
+        <Text fx:id="carbsValue" layoutX="784.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carbs"/>
+        <Text fx:id="sugarValue" layoutX="784.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sugar"/>
+        <Button fx:id="searchButton" layoutX="731.0" layoutY="156.0" mnemonicParsing="false" onAction="#search"
+                prefHeight="27.0" prefWidth="75.0" text="Search"/>
+        <ComboBox fx:id="timeComboBox" layoutX="567.0" layoutY="156.0" prefHeight="27.0" prefWidth="153.0"/>
+        <Text layoutX="526.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time"/>
+        <Button fx:id="home" layoutX="274.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToHome"
+                prefHeight="32.0"
+                prefWidth="85.0" text="Home"/>
+        <Button fx:id="nuitrition" layoutX="444.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToNutrition"
+                prefHeight="32.0" prefWidth="85.0" text="Nutrition"/>
+        <Button fx:id="tracking" layoutX="529.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToTracking"
+                prefHeight="32.0" prefWidth="85.0" text="Plates"/>
+        <Button fx:id="plates" layoutX="614.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToMeals"
+                prefHeight="32.0"
+                prefWidth="85.0" text="Meals"/>
+        <Button fx:id="profile" layoutX="699.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToProfile"
+                prefHeight="32.0" prefWidth="85.0" text="My profile"/>
+        <Button fx:id="logout" layoutX="999.0" layoutY="8.0" mnemonicParsing="false" onAction="#logOut"
+                prefHeight="32.0"
+                prefWidth="85.0" text="Log out"/>
+        <Button fx:id="products" layoutX="359.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToHome"
+                prefHeight="32.0" prefWidth="85.0" text="Products"/>
+        <Text layoutX="115.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TRACKING">
+            <font>
+                <Font name="Lohit Kannada" size="28.0"/>
+            </font>
+        </Text>
+        <ImageView fitHeight="98.0" fitWidth="76.0" layoutX="39.0" layoutY="28.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@../../../../pics/food/food-tracking.png"/>
+            </image>
+        </ImageView>
     </children>
 </AnchorPane>

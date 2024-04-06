@@ -6,37 +6,48 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="649.0" prefWidth="1098.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.gui.controllers.PlatesController">
-    <TextField fx:id="id_input" layoutX="179.0" layoutY="204.0" promptText="id" />
-    <TextField fx:id="name_input" layoutX="179.0" layoutY="246.0" promptText="name" />
-    <TextField fx:id="calories_input" layoutX="179.0" layoutY="288.0" promptText="calories" />
-    <TextField fx:id="protein_input" layoutX="179.0" layoutY="330.0" promptText="protein" />
-    <TextField fx:id="carbs_input" layoutX="179.0" layoutY="372.0" promptText="carbs" />
-    <TextField fx:id="fat_input" layoutX="179.0" layoutY="414.0" promptText="fat" />
-    <TextField fx:id="sugar_input" layoutX="179.0" layoutY="456.0" promptText="sugar" />
+<AnchorPane prefHeight="649.0" prefWidth="1098.0" xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.gui.controllers.PlatesController">
+    <TextField fx:id="id_input" visible="false" layoutX="179.0" layoutY="204.0" promptText="id"/>
+    <TextField fx:id="name_input" layoutX="179.0" layoutY="246.0" promptText="name"/>
+    <TextField fx:id="calories_input" layoutX="179.0" layoutY="288.0" promptText="calories"/>
+    <TextField fx:id="protein_input" layoutX="179.0" layoutY="330.0" promptText="protein"/>
+    <TextField fx:id="carbs_input" layoutX="179.0" layoutY="372.0" promptText="carbs"/>
+    <TextField fx:id="fat_input" layoutX="179.0" layoutY="414.0" promptText="fat"/>
+    <TextField fx:id="sugar_input" layoutX="179.0" layoutY="456.0" promptText="sugar"/>
 
     <TableView fx:id="platesTableView" layoutX="393.0" layoutY="186.0" prefHeight="313.0" prefWidth="527.0">
         <columns>
-            <TableColumn fx:id="id" prefWidth="75.0" text="id" />
-            <TableColumn fx:id="name" prefWidth="75.0" text="name" />
-            <TableColumn fx:id="calories" prefWidth="75.0" text="calories" />
-            <TableColumn fx:id="protein" prefWidth="75.0" text="protein" />
-            <TableColumn fx:id="carbs" prefWidth="75.0" text="carbs" />
-            <TableColumn fx:id="fat" prefWidth="75.0" text="fat" />
-            <TableColumn fx:id="sugar" prefWidth="75.0" text="sugar" />
+            <TableColumn fx:id="id" prefWidth="75.0" text="id"/>
+            <TableColumn fx:id="name" prefWidth="75.0" text="name"/>
+            <TableColumn fx:id="calories" prefWidth="75.0" text="calories"/>
+            <TableColumn fx:id="protein" prefWidth="75.0" text="protein"/>
+            <TableColumn fx:id="carbs" prefWidth="75.0" text="carbs"/>
+            <TableColumn fx:id="fat" prefWidth="75.0" text="fat"/>
+            <TableColumn fx:id="sugar" prefWidth="75.0" text="sugar"/>
         </columns>
     </TableView>
-    <Button fx:id="saveButton" layoutX="180.0" layoutY="503.0" mnemonicParsing="false" onAction="#onSave" text="Save" />
-    <Button fx:id="editButton" layoutX="601.0" layoutY="516.0" mnemonicParsing="false" onAction="#editPlate" text="Edit" />
-    <Button fx:id="deleteButton" layoutX="661.0" layoutY="516.0" mnemonicParsing="false" onAction="#deletePlate" text="Delete" />
-    <Button fx:id="resetButton" layoutX="295.0" layoutY="503.0" mnemonicParsing="false" onAction="#clearForm" text="Reset" />
-   <TextField fx:id="search" layoutX="749.0" layoutY="153.0" promptText="search" />
-   <Button fx:id="home" layoutX="274.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="32.0" prefWidth="85.0" text="Home" />
-   <Button fx:id="nuitrition" layoutX="444.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToNutrition" prefHeight="32.0" prefWidth="85.0" text="Nutrition" />
-   <Button fx:id="tracking" layoutX="529.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToTracking" prefHeight="32.0" prefWidth="85.0" text="Tracking" />
-   <Button fx:id="plates" layoutX="614.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToMeals" prefHeight="32.0" prefWidth="85.0" text="Meals" />
-   <Button fx:id="profile" layoutX="699.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToProfile" prefHeight="32.0" prefWidth="85.0" text="My profile" />
-   <Button fx:id="logout" layoutX="999.0" layoutY="8.0" mnemonicParsing="false" onAction="#logOut" prefHeight="32.0" prefWidth="85.0" text="Log out" />
-   <Button fx:id="products" layoutX="359.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="32.0" prefWidth="85.0" text="Products" />
+    <Button fx:id="saveButton" layoutX="180.0" layoutY="503.0" mnemonicParsing="false" onAction="#onSave" text="Save"/>
+    <Button fx:id="editButton" layoutX="601.0" layoutY="516.0" mnemonicParsing="false" onAction="#editPlate"
+            text="Edit"/>
+    <Button fx:id="deleteButton" layoutX="661.0" layoutY="516.0" mnemonicParsing="false" onAction="#deletePlate"
+            text="Delete"/>
+    <Button fx:id="resetButton" layoutX="295.0" layoutY="503.0" mnemonicParsing="false" onAction="#clearForm"
+            text="Reset"/>
+    <TextField fx:id="search" visible="false" layoutX="749.0" layoutY="153.0" promptText="search"/>
+    <Button fx:id="home" layoutX="274.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="32.0"
+            prefWidth="85.0" text="Home"/>
+    <Button fx:id="nuitrition" layoutX="444.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToNutrition"
+            prefHeight="32.0" prefWidth="85.0" text="Nutrition"/>
+    <Button fx:id="tracking" layoutX="529.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToTracking"
+            prefHeight="32.0" prefWidth="85.0" text="Tracking"/>
+    <Button fx:id="plates" layoutX="614.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToMeals" prefHeight="32.0"
+            prefWidth="85.0" text="Meals"/>
+    <Button fx:id="profile" layoutX="699.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToProfile"
+            prefHeight="32.0" prefWidth="85.0" text="My profile"/>
+    <Button fx:id="logout" layoutX="999.0" layoutY="8.0" mnemonicParsing="false" onAction="#logOut" prefHeight="32.0"
+            prefWidth="85.0" text="Log out"/>
+    <Button fx:id="products" layoutX="359.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToHome"
+            prefHeight="32.0" prefWidth="85.0" text="Products"/>
 
 </AnchorPane>

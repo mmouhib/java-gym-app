@@ -192,7 +192,7 @@ public class MealsController implements Initializable {
 
     public void goToTracking(ActionEvent event) {
         try {
-            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/nutrition/nutrition.fxml"));
+            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/nutrition/food-tracking.fxml"));
             Scene scene = new Scene(p, 1100, 650);
             Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             appStage.setScene(scene);
@@ -206,7 +206,7 @@ public class MealsController implements Initializable {
 
     public void goToMeals(ActionEvent event) {
         try {
-            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/meals.fxml"));
+            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/meal.fxml"));
             Scene scene = new Scene(p, 1100, 650);
             Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             appStage.setScene(scene);
@@ -238,9 +238,8 @@ public class MealsController implements Initializable {
             Scene scene = new Scene(p, 1100, 650);
             Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             appStage.setScene(scene);
-            //appStage.setUserData(3);
             appStage.show();
-
+            AuthSessionUtils.LogOut();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
