@@ -249,7 +249,7 @@ public class PlatesController {
 
     public void goToTracking(ActionEvent event) {
         try {
-            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/nutrition/plates.fxml"));
+            Parent p = FXMLLoader.load(getClass().getResource("/com/esprit/gui/nutrition/food-tracking.fxml"));
             Scene scene = new Scene(p, 1100, 650);
             Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             appStage.setScene(scene);
