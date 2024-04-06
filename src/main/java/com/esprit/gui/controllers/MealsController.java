@@ -1,5 +1,8 @@
 package com.esprit.gui.controllers;
 
+import com.esprit.gui.models.Meal;
+import com.esprit.gui.repository.MealRepository;
+import com.esprit.gui.repository.PlatesRepository;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -7,18 +10,22 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.DragEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.sql.Date;
 import java.util.ResourceBundle;
 
 public class MealsController implements Initializable {
 
 
     public Button home;
-    public ComboBox type;
+    public ComboBox<String> type;
     public CheckBox isToday;
     public DatePicker dateInput;
     public Text quantityValue;
@@ -32,18 +39,50 @@ public class MealsController implements Initializable {
     public Button plates;
     public Button tracking;
     public Button nutrition;
-
-
-    public void updateDateInput(ActionEvent actionEvent) {
-        dateInput.setDisable(isToday.isSelected());
-    }
+    public ComboBox<String> category;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        quantity.valueProperty().addListener((observable, oldValue, newValue) -> {
+            quantityValue.setText(Integer.toString(newValue.intValue()));
+        });
+        category.getItems().add("breakfast");
+        category.getItems().add("lunch");
+        category.getItems().add("dinner");
+        category.getItems().add("snack");
+        updatePlatesDropdown();
+    }
 
+
+    private void updatePlatesDropdown() {
+        PlatesRepository platesRepository = new PlatesRepository();
+        platesRepository.list().forEach(plate -> {
+            type.getItems().add(plate.getId() + " - " + plate.getName());
+        });
+    }
+
+    public void updateDateInput(DragEvent actionEvent) {
+        dateInput.setDisable(isToday.isSelected());
+        dateInput.setValue(LocalDate.parse(new Date(Calendar.getInstance().getTimeInMillis()).toString()));
+    }
+
+    public void updateQuantityValue() {
     }
 
     public void onSave(ActionEvent actionEvent) {
+        MealRepository mealRepository = new MealRepository();
+        mealRepository.save(
+                new Meal(
+                        name_input.getText(),
+                        Date.valueOf(dateInput.getValue()),
+                        Integer.parseInt(quantityValue.getText()),
+                        // Integer.parseInt(AuthSessionUtils.getCurrentUser()),
+                        category.getValue(),
+                        4,
+                        Integer.parseInt(type.getValue().split(" - ")[0])
+                )
+        );
+
     }
 
     public void clearForm(ActionEvent actionEvent) {

@@ -1,4 +1,4 @@
-package com.esprit.gui.models;
+package com.esprit.gui.models.tableviewmodels;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;

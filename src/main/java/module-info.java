@@ -17,4 +17,5 @@ module com.esprit.gui {
     exports com.esprit.gui.controllers;
     exports com.esprit.gui.models;
     opens com.esprit.gui.controllers to javafx.fxml;
+    exports com.esprit.gui.models.tableviewmodels;
 }

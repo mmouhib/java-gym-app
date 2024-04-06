@@ -16,95 +16,94 @@ public class MealRepository implements IMeal {
         connection = DatabaseConnection.getConnection();
     }
 
+
     @Override
-    public List<Meal> list() {
-        List<Meal> lst = new ArrayList<>();
+    public List<Meal> getMealsByUser(int id) {
+        List<Meal> meals = new ArrayList<>();
         try {
-            PreparedStatement ps = connection.prepareStatement("select * from meal");
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM meal WHERE user_id = ?");
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
                 Meal meal = new Meal();
-                meal.setId(rs.getInt(1));
-                meal.setName(rs.getString(2));
-                meal.setCalories(rs.getInt(3));
-                meal.setProtein(rs.getInt(4));
-                meal.setCarbs(rs.getInt(5));
-                meal.setFat(rs.getInt(6));
-                meal.setSugar(rs.getInt(7));
-                meal.setUserId(rs.getInt(8));
-                meal.setDate(rs.getDate(9));
-                lst.add(meal);
+                meal.setId(resultSet.getInt("id"));
+                meal.setName(resultSet.getString("name"));
+                meal.setDate(resultSet.getDate("date"));
+                meal.setQuantity(resultSet.getInt("quantity"));
+                meal.setCategory(resultSet.getString("category"));
+                meal.setUserId(resultSet.getInt("user_id"));
+                meal.setPlateId(resultSet.getInt("plate_id"));
+                meals.add(meal);
             }
         } catch (SQLException e) {
-            return null;
+            e.printStackTrace();
         }
-        return lst;
+        return meals;
     }
 
     @Override
-    public Meal findById(int id) {
-        //return the meal by its id from database
-        Meal meal = new Meal();
+    public List<Meal> getMealsByDate(String date) {
+        List<Meal> meals = new ArrayList<>();
         try {
-            PreparedStatement ps = connection.prepareStatement("select * from meal where id=?");
-            ps.setInt(1, id);
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                meal.setId(rs.getInt(1));
-                meal.setName(rs.getString(2));
-                meal.setCalories(rs.getInt(3));
-                meal.setProtein(rs.getInt(4));
-                meal.setCarbs(rs.getInt(5));
-                meal.setFat(rs.getInt(6));
-                meal.setSugar(rs.getInt(7));
-                meal.setUserId(rs.getInt(8));
-                meal.setDate(rs.getDate(9));
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM meal WHERE date = ?");
+            preparedStatement.setDate(1, Date.valueOf(date));
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Meal meal = new Meal();
+                meal.setId(resultSet.getInt("id"));
+                meal.setName(resultSet.getString("name"));
+                meal.setDate(resultSet.getDate("date"));
+                meal.setCategory(resultSet.getString("category"));
+                meal.setQuantity(resultSet.getInt("quantity"));
+                meal.setUserId(resultSet.getInt("user_id"));
+                meal.setPlateId(resultSet.getInt("plate_id"));
+                meals.add(meal);
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
-        return meal;
+        return meals;
     }
+
+    @Override
+    public List<Meal> getMealsByDateAndUser(Date date, int userId) {
+        List<Meal> meals = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM meal WHERE date = ? AND user_id = ?");
+            preparedStatement.setDate(1, date);
+            preparedStatement.setInt(2, userId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Meal meal = new Meal();
+                meal.setId(resultSet.getInt("id"));
+                meal.setName(resultSet.getString("name"));
+                meal.setDate(resultSet.getDate("date"));
+                meal.setQuantity(resultSet.getInt("quantity"));
+                meal.setCategory(resultSet.getString("category"));
+                meal.setUserId(resultSet.getInt("user_id"));
+                meal.setPlateId(resultSet.getInt("plate_id"));
+                meals.add(meal);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return meals;
+    }
+
 
     @Override
     public Meal save(Meal meal) {
         try {
-            PreparedStatement ps = connection.prepareStatement("INSERT INTO meal(name, calories, protein, carbs, fat, sugar, userId, date) VALUES(?, ?, ?, ?, ?,?, ?, ?)");
-            ps.setString(1, meal.getName());
-            ps.setInt(2, meal.getCalories());
-            ps.setInt(3, meal.getProtein());
-            ps.setInt(4, meal.getCarbs());
-            ps.setInt(5, meal.getFat());
-            ps.setInt(6, meal.getSugar());
-            ps.setInt(7, meal.getUserId());
-            ps.setDate(8, (Date) meal.getDate());
-            ps.executeUpdate();
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO meal (name, date, quantity, category, user_id, plate_id) VALUES (?, ?, ?, ?, ?, ?)");
+            preparedStatement.setString(1, meal.getName());
+            preparedStatement.setDate(2, meal.getDate());
+            preparedStatement.setInt(3, meal.getQuantity());
+            preparedStatement.setString(4, meal.getCategory());
+            preparedStatement.setInt(5, meal.getUserId());
+            preparedStatement.setInt(6, meal.getPlateId());
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        return getLastAddedMeal();
-    }
-
-
-    public Meal getLastAddedMeal() {
-        // get last added meal from database
-        Meal meal = new Meal();
-        try {
-            PreparedStatement ps = connection.prepareStatement("SELECT * FROM meal ORDER BY id DESC LIMIT 1");
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                meal.setId(rs.getInt(1));
-                meal.setName(rs.getString(2));
-                meal.setCalories(rs.getInt(3));
-                meal.setProtein(rs.getInt(4));
-                meal.setCarbs(rs.getInt(5));
-                meal.setFat(rs.getInt(6));
-                meal.setSugar(rs.getInt(7));
-                meal.setUserId(rs.getInt(8));
-                meal.setDate(rs.getDate(9));
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         return meal;
     }
@@ -112,112 +111,73 @@ public class MealRepository implements IMeal {
     @Override
     public void update(Meal meal) {
         try {
-            PreparedStatement ps = connection.prepareStatement("UPDATE meal SET name=?, calories=?, protein=?, carbs=?, fat=?, sugar=?, userId=?, date=? WHERE id=?");
-            ps.setString(1, meal.getName());
-            ps.setInt(2, meal.getCalories());
-            ps.setInt(3, meal.getProtein());
-            ps.setInt(4, meal.getCarbs());
-            ps.setInt(5, meal.getFat());
-            ps.setInt(6, meal.getSugar());
-            ps.setInt(7, meal.getUserId());
-            ps.setDate(8, (Date) meal.getDate());
-            ps.setInt(9, meal.getId());
-            ps.executeUpdate();
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE meal SET name = ?, date = ?, quantity = ?, user_id = ?, plate_id = ?, category = ? WHERE id = ?");
+            preparedStatement.setString(1, meal.getName());
+            preparedStatement.setDate(2, meal.getDate());
+            preparedStatement.setInt(3, meal.getQuantity());
+            preparedStatement.setInt(4, meal.getUserId());
+            preparedStatement.setInt(5, meal.getPlateId());
+            preparedStatement.setString(6, meal.getCategory());
+            preparedStatement.setInt(7, meal.getId());
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 
     @Override
     public void delete(int id) {
         try {
-            PreparedStatement ps = connection.prepareStatement("DELETE FROM meal WHERE id = ?");
-            ps.setInt(1, id);
-            ps.executeUpdate();
-            ps.close();
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM meal WHERE id = ?");
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
-
+            e.printStackTrace();
         }
     }
 
     @Override
-    public List<Meal> getMealsByUser(int id) {
-        List<Meal> lst = new ArrayList<>();
+    public Meal findById(int id) {
+        Meal meal = new Meal();
         try {
-            PreparedStatement ps = connection.prepareStatement("select * from meal where userId=?");
-            ps.setInt(1, id);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                Meal meal = new Meal();
-                meal.setId(rs.getInt(1));
-                meal.setName(rs.getString(2));
-                meal.setCalories(rs.getInt(3));
-                meal.setProtein(rs.getInt(4));
-                meal.setCarbs(rs.getInt(5));
-                meal.setFat(rs.getInt(6));
-                meal.setSugar(rs.getInt(7));
-                meal.setUserId(rs.getInt(8));
-                meal.setDate(rs.getDate(9));
-                lst.add(meal);
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM meal WHERE id = ?");
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                meal.setId(resultSet.getInt("id"));
+                meal.setName(resultSet.getString("name"));
+                meal.setDate(resultSet.getDate("date"));
+                meal.setQuantity(resultSet.getInt("quantity"));
+                meal.setCategory(resultSet.getString("category"));
+                meal.setUserId(resultSet.getInt("user_id"));
+                meal.setPlateId(resultSet.getInt("plate_id"));
             }
         } catch (SQLException e) {
-            return null;
+            e.printStackTrace();
         }
-        return lst;
+        return meal;
     }
 
     @Override
-    public List<Meal> getMealsByDate(String date) {
-        List<Meal> lst = new ArrayList<>();
+    public List<Meal> list() {
+        List<Meal> meals = new ArrayList<>();
         try {
-            PreparedStatement ps = connection.prepareStatement("select * from meal where date>=?");
-            ps.setDate(1, Date.valueOf(date));
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM meal");
+            while (resultSet.next()) {
                 Meal meal = new Meal();
-                meal.setId(rs.getInt(1));
-                meal.setName(rs.getString(2));
-                meal.setCalories(rs.getInt(3));
-                meal.setProtein(rs.getInt(4));
-                meal.setCarbs(rs.getInt(5));
-                meal.setFat(rs.getInt(6));
-                meal.setSugar(rs.getInt(7));
-                meal.setUserId(rs.getInt(8));
-                meal.setDate(rs.getDate(9));
-                lst.add(meal);
+                meal.setId(resultSet.getInt("id"));
+                meal.setName(resultSet.getString("name"));
+                meal.setDate(resultSet.getDate("date"));
+                meal.setQuantity(resultSet.getInt("quantity"));
+                meal.setCategory(resultSet.getString("category"));
+                meal.setUserId(resultSet.getInt("user_id"));
+                meal.setPlateId(resultSet.getInt("plate_id"));
+                meals.add(meal);
             }
         } catch (SQLException e) {
-            return null;
+            e.printStackTrace();
         }
-        return lst;
-    }
-
-    @Override
-    public List<Meal> getMealsByDates(String start, String end) {
-        // get meals between two dates
-        List<Meal> lst = new ArrayList<>();
-        try {
-            PreparedStatement ps = connection.prepareStatement("select * from meal where date>=? and date<=?");
-            ps.setDate(1, Date.valueOf(start));
-            ps.setDate(2, Date.valueOf(end));
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                Meal meal = new Meal();
-                meal.setId(rs.getInt(1));
-                meal.setName(rs.getString(2));
-                meal.setCalories(rs.getInt(3));
-                meal.setProtein(rs.getInt(4));
-                meal.setCarbs(rs.getInt(5));
-                meal.setFat(rs.getInt(6));
-                meal.setSugar(rs.getInt(7));
-                meal.setUserId(rs.getInt(8));
-                meal.setDate(rs.getDate(9));
-                lst.add(meal);
-            }
-        } catch (SQLException e) {
-            return null;
-        }
-        return lst;
+        return meals;
     }
 }

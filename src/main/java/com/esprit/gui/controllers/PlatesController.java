@@ -1,7 +1,7 @@
 package com.esprit.gui.controllers;
 
 import com.esprit.gui.models.Plate;
-import com.esprit.gui.models.PlatesModel;
+import com.esprit.gui.models.tableviewmodels.PlatesModel;
 import com.esprit.gui.repository.PlatesRepository;
 import com.esprit.gui.utils.AuthSessionUtils;
 import javafx.collections.FXCollections;
